@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route,Link} from "react-router-dom";
+// import { BrowserRouter, Routes, Route,Link} from "react-router-dom";
 import "./App.css";
-import {getDetailsById,getPage} from "../modules/fetching";
+import { TMDB } from "../modules/fetching";
 
 // import NavBar from "./components/navBar/NavBar";
 // import Home from "./pages/home/Home";
@@ -23,9 +23,6 @@ export default function App() {
     );
 }
 
-getPage("tv",2).then((d)=>console.log(d))
-getDetailsById("tv",232239).then((d)=>console.log(d))
-
 
 function NavBar() {
     const [searchQuery,setSearchQuery] = useState("")
@@ -33,7 +30,7 @@ function NavBar() {
 
     const queryHandler = async (e)=>{
         e.preventDefault()
-        
+        TMDB.getSearch("tv",1,"one-piece").then((d)=>console.log(d))
     }
     return (
         <div className="navbar-outer">
