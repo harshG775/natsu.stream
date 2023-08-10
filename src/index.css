@@ -19,6 +19,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+ul,a {
+  display: block;
+  list-style: none;
+}
 
 /* container */
 .maxContainer {
