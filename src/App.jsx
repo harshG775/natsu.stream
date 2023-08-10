@@ -30,7 +30,8 @@ function NavBar() {
 
     const queryHandler = async (e)=>{
         e.preventDefault()
-        TMDB.getSearch("tv",1,"one-piece").then((d)=>console.log(d))
+        const query = searchQuery.replace(" ","-")
+        TMDB.getSearch("tv",1,query).then((d)=>console.log(d))
     }
     return (
         <div className="navbar-outer">
@@ -52,6 +53,14 @@ function NavBar() {
                     <li><a href="/Update">Update</a></li>
                 </ul>
             </nav>
+            <iframe
+                width='560'
+                height='315'
+                src="https://vidsrc.to/embed/movie/385687"
+                title='YouTube video player'
+                frameBorder='0'
+                allowfullscreen
+            ></iframe>
         </div>
     );
 }

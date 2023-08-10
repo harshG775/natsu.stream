@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 import myFetch from "./myFetch";
 const apiKey = "c04c4d588ea04e1542849e5b03feadc9";
 // //
@@ -24,7 +24,7 @@ export const TMDB = {
     getDetailsById: async function (mediaType, id) {
         return await myFetch(
             `https://api.themoviedb.org/3/${mediaType}/${id}?=${apiKey}`
-);
+        );
     },
 
     /* Search Movie/TVShow */
@@ -43,6 +43,8 @@ export const TMDB = {
 
     /* get Movie trailer Videos or clip */
     getMovieVideos: async function (mediaType, id) {
-        return await myFetch(`https://api.themoviedb.org/3/${mediaType}/${id}/videos?api_key=${apiKey}`);
+        return await myFetch(
+            `https://api.themoviedb.org/3/${mediaType}/${id}/videos?api_key=${apiKey}`
+        );
     },
 };
