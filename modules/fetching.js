@@ -26,6 +26,18 @@ export const TMDB = {
             `https://api.themoviedb.org/3/${mediaType}/${id}?=${apiKey}`
         );
     },
+    /* Fetch Season Details */
+    getSeason: async function (tv_id, season_number) {
+        return await myFetch(
+            `https://api.themoviedb.org/3/tv/${tv_id}/season/${season_number}?api_key=${apiKey}`
+        );
+    },
+    /* Fetch Episode Details */
+    getEpisode: async function (tv_id, season_number, episode_number) {
+        return await myFetch(
+            `https://api.themoviedb.org/3/tv/${tv_id}/season/${season_number}/episode/${episode_number}?api_key=${apiKey}`
+        );
+    },
 
     /* Search Movie/TVShow */
     getSearch: async function (mediaType, pageNumb, query) {

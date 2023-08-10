@@ -25,13 +25,17 @@ export default function App() {
 
 
 function NavBar() {
-    const [searchQuery,setSearchQuery] = useState("")
-    // const [searchResult,setSearchResult] = useState([])
 
+    const [searchQuery,setSearchQuery] = useState("")
+    const [mediaId,setMediaId] = useState("")
+    const srcUrl= `https://vidsrc.to/embed/tv/${mediaId}`
+    
     const queryHandler = async (e)=>{
         e.preventDefault()
         const query = searchQuery.replace(" ","-")
-        TMDB.getSearch("tv",1,query).then((d)=>console.log(d))
+        TMDB.getSearch("tv",1,query).then( (d)=>setMediaId(d.results[0].id) )
+
+        TMDB.getSearch("tv",1,query).then( (d)=>console.log(d.results) )
     }
     return (
         <div className="navbar-outer">
@@ -56,7 +60,8 @@ function NavBar() {
             <iframe
                 width='560'
                 height='315'
-                src="https://vidsrc.to/embed/movie/385687"
+                src={srcUrl}
+                // src="https://vidsrc.to/embed/tv/158876/1/2"
                 title='YouTube video player'
                 frameBorder='0'
                 allowfullscreen
