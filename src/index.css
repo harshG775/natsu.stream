@@ -53,6 +53,24 @@ h6 {
   .maxContainer {
     max-width: 1200px;
   }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  h3 {
+    font-size: 2.3rem;
+  }
+  h4 {
+    font-size: 2.1rem;
+  }
+  h5 {
+    font-size: 2rem;
+  }
+  h6 {
+    font-size: 1.9rem;
+  }
 }
 
 @media (max-width: 1200px) {
