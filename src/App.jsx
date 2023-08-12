@@ -31,8 +31,8 @@ function PageRoutes() {
             <Routes>
                 <Route path='/' element={<Welcome />} />
                 <Route path='/home' element={<Home />} />
-                <Route path='/movies' element={<Movies />} />
-                <Route path='/tvshow' element={<TvShow />} />
+                {/* <Route path='/movies' element={<Movies />} />
+                <Route path='/tvshow' element={<TvShow />} /> */}
             </Routes>
         </BrowserRouter>
     );
@@ -59,30 +59,11 @@ function Home() {
                 <div className="carousel">Carousel</div>
             </header>
             <main>
-            <h2>Tv Show</h2>
-                <PageSection
-                    sectionTitle={sections.sectionTitle[0]}
-                    sectionToFetch={sections.sectionToFetch[0]}
-                    mediaType={"tv"}
-                    pageNumb={1}
-                />
-                <PageSection
-                    sectionTitle={sections.sectionTitle[1]}
-                    sectionToFetch={sections.sectionToFetch[1]}
-                    mediaType={"tv"}
-                    pageNumb={1}
-                />
-
                 <h2>movies</h2>
+
                 <PageSection
                     sectionTitle={sections.sectionTitle[0]}
                     sectionToFetch={sections.sectionToFetch[0]}
-                    mediaType={"movie"}
-                    pageNumb={1}
-                />
-                <PageSection
-                    sectionTitle={sections.sectionTitle[1]}
-                    sectionToFetch={sections.sectionToFetch[1]}
                     mediaType={"movie"}
                     pageNumb={1}
                 />
@@ -90,17 +71,80 @@ function Home() {
         </div>
     );
 }
-function Movies() {
-    return (<div>Movies</div>);
-}
-function TvShow() {
-    return (<div>TvShow</div>);
-}
+// function Movies() {
+//     const sections ={
+//         sectionTitle:["Trending","Popular","Upcoming","NowPlaying"],
+//         sectionToFetch:["getTrendingPage","getPopularPage","getUpcomingPage","getNowPlayingPage","getDetailsById"]
+//     }
+//     return (
+//         <div>
+//             <header>
+//                 <h2>Movies</h2>
+//                 <div className="carousel">Carousel</div>
+//             </header>
+//             <main>
+//                 <PageSection
+//                     sectionTitle={sections.sectionTitle[0]}
+//                     sectionToFetch={sections.sectionToFetch[0]}
+//                     mediaType={"movie"}
+//                     pageNumb={1}
+//                 />
+//                 <PageSection
+//                     sectionTitle={sections.sectionTitle[1]}
+//                     sectionToFetch={sections.sectionToFetch[1]}
+//                     mediaType={"movie"}
+//                     pageNumb={1}
+//                 />
+//                 <PageSection
+//                     sectionTitle={sections.sectionTitle[2]}
+//                     sectionToFetch={sections.sectionToFetch[2]}
+//                     mediaType={"movie"}
+//                     pageNumb={1}
+//                 />
+//                 <PageSection
+//                     sectionTitle={sections.sectionTitle[3]}
+//                     sectionToFetch={sections.sectionToFetch[3]}
+//                     mediaType={"movie"}
+//                     pageNumb={1}
+//                 />
+//             </main>
+//         </div>
+//     );
+// }
+// function TvShow() {
+//     const sections ={
+//         sectionTitle:["Trending","Popular","Upcoming","NowPlaying"],
+//         sectionToFetch:["getTrendingPage","getPopularPage","getUpcomingPage","getNowPlayingPage","getDetailsById"]
+//     }
+//     return (
+//         <div>
+//             <header>
+//                 <h2>Tv Show</h2>
+//                 <div className="carousel">Carousel</div>
+//             </header>
+//             <main>
+//                 <PageSection
+//                     sectionTitle={sections.sectionTitle[0]}
+//                     sectionToFetch={sections.sectionToFetch[0]}
+//                     mediaType={"tv"}
+//                     pageNumb={1}
+//                 />
+//                 <PageSection
+//                     sectionTitle={sections.sectionTitle[1]}
+//                     sectionToFetch={sections.sectionToFetch[1]}
+//                     mediaType={"tv"}
+//                     pageNumb={1}
+//                 />
+//             </main>
+//         </div>
+//     );
+// }
 
 
 
 
 // fetching section
+
 function PageSection (prop) {
     const {sectionTitle, sectionToFetch, mediaType, pageNumb} = prop
 

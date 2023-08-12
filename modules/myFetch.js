@@ -1,9 +1,14 @@
-export default async (url)=>{
+export default async (url) => {
     try {
         const response = await fetch(url);
-        const jsonData = await response.json()
-        return await jsonData
+
+        if (!response.ok) {
+            throw new Error(`Request failed with status: ${response.status}`);
+        }
+
+        const jsonData = await response.json();
+        return jsonData;
     } catch (error) {
-        return await error
+        throw new Error(`An error occurred while fetching data: ${error.message}`);
     }
 };
