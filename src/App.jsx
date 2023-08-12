@@ -17,29 +17,81 @@ function NavBar() {
     return (
         <header>
             <nav>
+                <div><Link to={"/home"}>Logo</Link></div>
+                
                 <ul>
-                    <li>
-                        <Link to={"/home"}>Home</Link>
-                        <Link to={"/movies"}>Movie</Link>
-                        <Link to={"/tvshow"}>Tv Show</Link>
-                    </li>
+                    <li><Link to={"/home"}>Home</Link></li>
+                    <li><Link to={"/movies"}>Movie</Link></li>
+                    <li><Link to={"/tvshow"}>Tv Show</Link></li>
+                    <li><Link to={"/search"}>Search</Link></li>
+                    <li><Link to="/genres">Genres</Link></li>
                 </ul>
             </nav>
         </header>
     );
 }
+
+// Footer
+function Footer() {
+    return (
+        <footer>
+            <div className="footer-links">
+                <ul>
+                    {/* Navigation Links */}
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/movies">Movies</Link></li>
+                    <li><Link to="/tv-shows">TV Shows</Link></li>
+                    <li><Link to="/search">Search</Link></li>
+                    <li><Link to="/genres">Genres</Link></li>
+                </ul>
+            </div>
+            
+            <div className="footer-social">
+                {/* Social Media Icons */}
+                <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com/yourpage" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/yourpage" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+            </div>
+            
+            <div className="footer-info">
+                {/* Copyright Information */}
+                <p>&copy; {new Date().getFullYear()} Natsu.to All rights reserved.</p>
+                
+                {/* Support and Help */}
+                <ul>
+                    <li><Link to="/faq">FAQ</Link></li>
+                    <li><Link to="/help-center">Help Center</Link></li>
+                </ul>
+                
+                {/* Language and Region */}
+                <div className="language-region">
+                    {/* Language Selector */}
+                    <select>
+                        <option value="en-US">English (US)</option>
+                        <option value="hi">Hindi (IN)</option>
+                        {/* Add more language options here */}
+                    </select>
+                </div>
+            </div>
+        </footer>
+    );
+}
+
+// pages routes
 function PageRoutes() {
     return (
         <BrowserRouter>
-                <NavBar />
+            <NavBar />
             <Routes>
                 <Route path='/' element={<HomePage />} />
-                
+
                 <Route path='/home' element={<HomePage />} />
                 <Route path='/movies' element={<MoviesPage />} />
                 <Route path='/tvshow' element={<TvShowPage />} />
                 <Route path='/search' element={<SearchPage />} />
+                <Route path='/genres' element={"/genres"} />
             </Routes>
+            <Footer />
         </BrowserRouter>
     );
 }
@@ -48,7 +100,7 @@ function PageRoutes() {
 /* home page */
 function HomePage() {
     return (
-        <div>
+        <div className="body">
             <header>
                 <h2>Home</h2>
                 <div className="carousel">Carousel</div>
@@ -62,7 +114,7 @@ function HomePage() {
 /* movies page */
 function MoviesPage() {
     return (
-        <div>
+        <div className="body">
             <header>
                 <h2>Movies</h2>
                 <div className="carousel">Carousel</div>
@@ -76,7 +128,7 @@ function MoviesPage() {
 /* Tv SHow page */
 function TvShowPage() {
     return (
-        <div>
+        <div className="body">
             <header>
                 <h2>Tv Show</h2>
                 <div className="carousel">Carousel</div>
@@ -90,7 +142,7 @@ function TvShowPage() {
 /* Search page */
 function SearchPage() {
     return (
-        <div>
+        <div className="body">
             <header>
                 <h2>Search</h2>
                 <div className="carousel">Search input</div>

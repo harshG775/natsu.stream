@@ -1,6 +1,10 @@
-.item-container {
+.body {
+    min-height: 100vh;
+}
+
+nav ul {
     display: flex;
-    flex-wrap: wrap;
-    grid-gap: 2rem;
-    justify-content: center;
+}
+footer ul {
+    display: flex;
 }
