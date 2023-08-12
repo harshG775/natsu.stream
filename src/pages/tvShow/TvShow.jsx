@@ -1,9 +1,9 @@
 /* Tv SHow page */
-export default function Anime() {
+export default function TvShowPage() {
     return (
         <div className="body">
             <header>
-                <h2>Anime</h2>
+                <h2>Tv Show</h2>
                 <div className="carousel">Carousel</div>
             </header>
             <main>

@@ -1,0 +1,11 @@
+.carousel >div {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.item-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px,1fr));
+    justify-items: center;
+    grid-gap: 1rem;
+}

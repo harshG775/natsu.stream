@@ -1,9 +1,9 @@
-/* Tv SHow page */
-export default function Anime() {
+/* movies page */
+export default function MoviesPage() {
     return (
         <div className="body">
             <header>
-                <h2>Anime</h2>
+                <h2>Movies</h2>
                 <div className="carousel">Carousel</div>
             </header>
             <main>
