@@ -1,0 +1,23 @@
+{
+  "name": "natsu-stream",
+  "version": "0.0.1",
+  "description": "root directory",
+  "main": "index.js",
+  
+  "scripts": {
+    "start": "npm run build:frontend && npm run start:backend",
+    "build:frontend": "cd client && npm install && npm run build",
+    "start:backend": "cd server && npm install && npm start"
+  },
+
+  "author": "Harsh",
+  "license": "ISC",
+    "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/harshG775/natsu.stream.git"
+  },
+  "bugs": {
+    "url": "https://github.com/harshG775/natsu.stream/issues"
+  },
+  "homepage": "https://github.com/harshG775/natsu.stream#readme"
+}
