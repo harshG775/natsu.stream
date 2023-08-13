@@ -5,10 +5,10 @@
   "main": "index.js",
   
   "scripts": {
-    "start": "npm run build:frontend && npm run start:backend",
+    "start": "npm run build:frontend && npm start:backend",
     "build:frontend": "cd client && npm install && npm run build",
-    "start:backend": "cd server && npm install && npm start"
-  },
+    "start:backend": "cd server && node server.js"
+  },  
 
   "author": "Harsh",
   "license": "ISC",
