@@ -7,7 +7,8 @@
   "scripts": {
     "start": "npm run build:frontend && npm start:backend",
     "build:frontend": "cd client && npm install && npm run build",
-    "start:backend": "cd server && node server.js"
+    "start:backend": "cd server && node server.js",
+    "server": "cd server && node server.js"
   },  
 
   "author": "Harsh",
