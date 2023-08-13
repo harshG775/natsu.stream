@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3030;
 const TMDB = require("./modules/fetching")
 
 /* for serving react app after npm run build */
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.get("/api/trending/all", (req, res) => {
     TMDB.getAllTrendingPage().then(data=>{
