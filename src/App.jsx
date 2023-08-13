@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import HomePage from "./pages/home/Home";
 import TvShowPage from "./pages/tvShow/TvShow";
 import MoviesPage from "./pages/movies/Movies";
-import SearchPage from "./pages/search/search";
+import SearchPage from "./pages/search/Search";
 
 import Footer from "./components/footer/Footer";
 import "./App.css";
@@ -11,6 +11,8 @@ export default function App() {
     return (
         <>
         <PageRoutes />
+        <SearchPage/>
+
         </>
     );
 }
@@ -21,7 +23,6 @@ function NavBar() {
         <header>
             <nav>
                 <div><Link to={"/home"}>Logo</Link></div>
-                
                 <ul>
                     <li><Link to={"/home"}>Home</Link></li>
                     <li><Link to={"/movies"}>Movie</Link></li>
