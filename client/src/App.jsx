@@ -6,6 +6,7 @@ import SearchPage from "./pages/search/Search";
 
 import Footer from "./components/footer/Footer";
 import "./App.css";
+import { useState } from "react";
 
 export default function App() {
     return (
@@ -22,9 +23,9 @@ function NavBar() {
     return (
         <header>
             <nav>
-                <div><Link to={"/home"}>Logo</Link></div>
+                <div><Link to={"/"}>Logo</Link></div>
                 <ul>
-                    <li><Link to={"/home"}>Home</Link></li>
+                    <li><Link to={"/"}>Home</Link></li>
                     <li><Link to={"/movies"}>Movie</Link></li>
                     <li><Link to={"/tvshow"}>Tv Show</Link></li>
                     <li><Link to={"/search"}>Search</Link></li>
@@ -36,13 +37,15 @@ function NavBar() {
 
 // pages routes
 function PageRoutes() {
+    // const [url,setUrl]=useState()
+    // setUrl(window.location.href)
+    // console.log(url)
     return (
         <BrowserRouter>
             <NavBar />
             <Routes>
                 <Route path='/' element={<HomePage />} />
 
-                <Route path='/home' element={<HomePage />} />
                 <Route path='/movies' element={<MoviesPage />} />
                 <Route path='/tvshow' element={<TvShowPage />} />
                 <Route path='/search' element={<SearchPage />} />
@@ -51,33 +54,10 @@ function PageRoutes() {
         </BrowserRouter>
     );
 }
+  
+  
 
 
-
-
-// fetching section
-
-// function PageSection (prop) {
-//     const {sectionTitle, sectionToFetch, mediaType, pageNumb} = prop
-
-//     const [apiData, setApiData] = useState()
-//     useEffect(()=>{
-//         TMDB[mediaType][sectionToFetch](pageNumb).then(data=>setApiData(data))
-
-//     },[setApiData, mediaType, sectionToFetch, pageNumb])
-//     console.log(apiData)
-//     return (
-//         <div>
-//             <h4>{sectionTitle}</h4>
-//             <div className="item-container">
-//                     {/* {apiData?.results?.map((itemData,key)=>(
-//                         <Item {...itemData} key={key} />
-//                     ))} */}
-//                         <Item {...apiData?.results[0]}/>
-//             </div>
-//         </div>
-//     );
-// }
 
 
 // function NavBar() {

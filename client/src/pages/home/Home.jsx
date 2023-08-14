@@ -46,7 +46,7 @@ function Trending() {
         <div>
             {/* <CardItem {...trending?.results}/> */}
             {trending.results?.map((d,key)=>(
-                <CardItem {...d} key={key} />
+                <CardItem {...d} mediaType={"movie"} key={key} />
             ))}
         </div>
     );
@@ -66,18 +66,31 @@ function Popular() {
         <div className="item-container maxContainer">
             {/* <CardItem {...trending?.results}/> */}
             {trending.results?.map((d,key)=>(
-                <CardItem {...d} key={key} />
+                <CardItem {...d} mediaType={"movie"} key={key} />
             ))}
         </div>
     );
 }
 
+
+
+
 function CardItem(prop) {
-    const { backdrop_path, first_air_date, name,title ,origin_country,vote_average} = prop;
+    const {
+        mediaType,
+        backdrop_path,
+        id,
+        title,
+        name,
+        first_air_date,
+        vote_average,
+        origin_country,
+    } = prop;
+
     return (
         <div className='item'>
             <div className='item-inner'>
-                <Link to={`/overview/${name}`}>
+                <Link to={`https://vidsrc.to/embed/${mediaType}/${id}`}>
                     <img
                         src={`https://image.tmdb.org/t/p/w185${backdrop_path}`}
                         alt=''
@@ -86,9 +99,9 @@ function CardItem(prop) {
                 <div className='meta'>
                     <h6>
                         {title ? (
-                            <Link to={`/overview/${title}`}>{title}</Link>
+                            <Link to={`${mediaType}/overview/${id}`}>{title}</Link>
                         ) : (
-                            <Link to={`/overview/${name}`}>{name}</Link>
+                            <Link to={`${mediaType}/overview/${id}`}>{name}</Link>
                         )}
                     </h6>
                     <div>
