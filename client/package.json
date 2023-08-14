@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "old-build-command": "vite build",
+    "netlify": "vite build",
     "build": "vite build --outDir ../server/public",
     
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
