@@ -1,25 +1,15 @@
-const express = require("express");
-const app = express();
-const path = require("path");
-const PORT = process.env.PORT || 3030;
+import express from "express";
+import path from "path";
+import router from "./routes/router.js"
 
-const TMDB = require("./modules/fetching")
+const app = express();
+
+import __dirname from "./modules/__dirname.js";
 
 /* for serving react app after npm run build */
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
-app.get("/api/trending/all", (req, res) => {
-    TMDB.getAllTrendingPage().then(data=>{
-        res.json(data);
-    })
-});
+app.use("/",router)
 
-
-// universal route
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
-});
-
-app.listen(PORT, () => {
-    console.log(`server started at http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 3030;
+app.listen(PORT, () => console.log(`server started at http://localhost:${PORT}`));

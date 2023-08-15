@@ -1,6 +1,6 @@
 "use strict";
 // import myFetch from "./myFetch";
-const myFetch= require("./myFetch")
+import myFetch from "./myFetch.js";
 
 const apiKey = "c04c4d588ea04e1542849e5b03feadc9";
 const basUrl = "https://api.themoviedb.org/3";
@@ -16,7 +16,7 @@ const options = {
 "https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
 "https://image.tmdb.org/t/p/w500/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
 // ////////////
-module.exports =  {
+const TMDB = {
         getAllTrendingPage: async function (pageNumb = 1, time = "day") {
             const url = `${basUrl}/trending/all/${time}?api_key=${apiKey}&page=${pageNumb}`;
             return await myFetch(url, options);
@@ -107,3 +107,4 @@ module.exports =  {
         //
     },
 };
+export default TMDB
