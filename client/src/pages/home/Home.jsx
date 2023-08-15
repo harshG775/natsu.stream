@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { TMDB } from "../../../modules/fetching";
 
-
 import "./home.css"
 
 export default function HomePage() {
@@ -90,7 +89,7 @@ function CardItem(prop) {
     return (
         <div className='item'>
             <div className='item-inner'>
-                <Link to={`https://vidsrc.to/embed/${mediaType}/${id}`}>
+                <Link to={`overview/${mediaType}/${id}`}>
                     <img
                         src={`https://image.tmdb.org/t/p/w185${backdrop_path}`}
                         alt=''
@@ -99,9 +98,9 @@ function CardItem(prop) {
                 <div className='meta'>
                     <h6>
                         {title ? (
-                            <Link to={`${mediaType}/overview/${id}`}>{title}</Link>
+                            <Link to={`overview/${mediaType}/${id}`}>{title}</Link>
                         ) : (
-                            <Link to={`${mediaType}/overview/${id}`}>{name}</Link>
+                            <Link to={`overview/${mediaType}/${id}`}>{name}</Link>
                         )}
                     </h6>
                     <div>

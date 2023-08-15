@@ -4,9 +4,12 @@ import TvShowPage from "./pages/tvShow/TvShow";
 import MoviesPage from "./pages/movies/Movies";
 import SearchPage from "./pages/search/Search";
 
+import Content from "./pages/content/Content";
+
+
 import Footer from "./components/footer/Footer";
 import "./App.css";
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function App() {
     return (
@@ -37,26 +40,24 @@ function NavBar() {
 
 // pages routes
 function PageRoutes() {
-    // const [url,setUrl]=useState()
-    // setUrl(window.location.href)
-    // console.log(url)
     return (
-        <BrowserRouter>
-            <NavBar />
-            <Routes>
-                <Route path='/' element={<HomePage />} />
+        <>
+            <BrowserRouter>
+                <NavBar />
+                <Routes>
+                    <Route path='/' element={<HomePage />} />
 
-                <Route path='/movies' element={<MoviesPage />} />
-                <Route path='/tvshow' element={<TvShowPage />} />
-                <Route path='/search' element={<SearchPage />} />
-            </Routes>
-            <Footer />
-        </BrowserRouter>
+                    <Route path='/movies' element={<MoviesPage />} />
+                    <Route path='/tvshow' element={<TvShowPage />} />
+                    <Route path='/search' element={<SearchPage />} />
+
+                    <Route path='overview/:content/:id' element={<Content />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </>
     );
 }
-  
-  
-
 
 
 
