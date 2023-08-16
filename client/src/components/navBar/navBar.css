@@ -1,6 +1,11 @@
-.navbar-outer {
+.navbar {
     background-color: white;
+    padding: 1rem;
 }
+.navbar div {
+    display: flex;
+}
+
 .navbar-outer nav ul {
     display: flex;
 }

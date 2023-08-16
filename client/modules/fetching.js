@@ -11,6 +11,8 @@ const options = {
             "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMDRjNGQ1ODhlYTA0ZTE1NDI4NDllNWIwM2ZlYWRjOSIsInN1YiI6IjYyMzg2NDQ2OWVlMGVmMDA0NmRhNTA0NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dA1jUv8T1T3u9rACdp3RAvs7FnAWVYM7HTDbIvqEmqg",
     },
 };
+
+`https://api.themoviedb.org/3/search/multi?api_key=c04c4d588ea04e1542849e5b03feadc9&page=1&query=thor`
 //////////////////////////////////
 export const TMDB = {
         getAllTrendingPage: async function (pageNumb = 1, time = "day") {
