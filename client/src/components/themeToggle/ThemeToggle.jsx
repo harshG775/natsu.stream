@@ -5,5 +5,5 @@ export default function ThemeToggle(prop) {
     function toggleHandle() {
         root.classList.toggle("dark-mode");
     }
-    return <button onClick={toggleHandle}>{prop.element}</button>;
+    return <button onClick={toggleHandle}>{prop.children}</button>;
 }

@@ -15,7 +15,7 @@
 
 
     /* initial colors */
-    --primary-color: #FF4081;
+    --primary-color: hsl(360, 100%, 63%);
 
     --secondary-color: #303F9F;
     --accent-color: #FF8066;
@@ -40,5 +40,11 @@
 }
 
 a {
+    display: inline-block;
     color: var(--accent-color);
+}
+
+a,ul {
+    text-decoration: none;
+    list-style-type: none;
 }

@@ -7,23 +7,55 @@ import ThemeToggle from "../themeToggle/ThemeToggle";
 export default function NavBar() {
     return (
         <header className='navbar'>
-            <div className="logo"><Link to={"/"}>LOGO</Link></div>
-            <nav className="nav-links maxContainer">
-                <ul>
-                    <li><Link to={"/"}>Home</Link></li>
-                    <li><Link to={"/movies"}>Movie</Link></li>
-                    <li><Link to={"/tvshow"}>Tv Show</Link></li>
-                    <li><Link to={"/search"}>Search</Link></li>
-                </ul>
-            </nav>
-            <div className="user">
-                <img src="profile" alt="User Profile" />
-                <Link>Username</Link>
-            </div>
-            <div className="theme">
-                <ThemeToggle element={"toggle"} />
-                {/* <button id="theme">X</button>
-                <label htmlFor="theme">dark mode</label> */}
+            <div className='navbar-inner'>
+                <div className='logo'>
+                    <Link to={"/"}>
+                        <h4 className="img"><i className="fa-solid fa-dragon"></i></h4>
+                         <span>log name</span>
+                    </Link>
+                    <i className="menuToggle fa-solid fa-square-caret-left"></i>
+                </div>
+                <nav className='nav-links'>
+                    <ul>
+                        <li>
+                            <Link to={"/"}>
+                                <i className='fa-solid fa-house'></i>
+                                <span>Home</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={"/movies"}>
+                                <i className='fa-solid fa-film'></i>
+                                <span>Movie</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={"/tvshow"}>
+                                <i className='fa-solid fa-tv'></i>
+                                <span>Tv Show</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={"/search"}>
+                                <i className='fa-solid fa-magnifying-glass'></i>
+                                <span>Search</span>
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+                <div className='user'>
+                    <img src='profile' alt='User Profile' />
+                    <div>
+                        <Link to={"user"}>Username</Link>
+                    </div>
+                    <div className='theme-toggle'>
+                        <ThemeToggle >
+                            <i className="fa-solid fa-circle-half-stroke"></i>
+                            THEME
+                        </ThemeToggle>
+                        
+                    </div>
+                </div>
             </div>
         </header>
     );

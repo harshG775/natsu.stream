@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import CardItem from "../../components/cardItem/CardItem"
 /* Search page */
 
+
 export default function SearchPage() {
     const params = useParams();
     const query = params.query
