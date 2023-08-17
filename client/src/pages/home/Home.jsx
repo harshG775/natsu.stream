@@ -1,8 +1,7 @@
 /* home page */
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { TMDB } from "../../../modules/fetching";
-
+import CardItem from "../../components/cardItem/CardItem";
 import "./home.css"
 
 export default function HomePage() {
@@ -45,7 +44,7 @@ function Trending() {
         <div>
             {/* <CardItem {...trending?.results}/> */}
             {trending.results?.map((d,key)=>(
-                <CardItem {...d} mediaType={"movie"} key={key} />
+                <CardItem {...d} contentType={"movie"} key={key} />
             ))}
         </div>
     );
@@ -65,53 +64,8 @@ function Popular() {
         <div className="item-container maxContainer">
             {/* <CardItem {...trending?.results}/> */}
             {trending.results?.map((d,key)=>(
-                <CardItem {...d} mediaType={"movie"} key={key} />
+                <CardItem {...d} contentType={"movie"} key={key} />
             ))}
-        </div>
-    );
-}
-
-
-
-
-function CardItem(prop) {
-    const {
-        mediaType,
-        backdrop_path,
-        id,
-        title,
-        name,
-        first_air_date,
-        vote_average,
-        origin_country,
-    } = prop;
-
-    return (
-        <div className='item'>
-            <div className='item-inner'>
-                <Link to={`overview/${mediaType}/${id}`}>
-                    <img
-                        src={`https://image.tmdb.org/t/p/w185${backdrop_path}`}
-                        alt=''
-                    />
-                </Link>
-                <div className='meta'>
-                    <h6>
-                        {title ? (
-                            <Link to={`overview/${mediaType}/${id}`}>{title}</Link>
-                        ) : (
-                            <Link to={`overview/${mediaType}/${id}`}>{name}</Link>
-                        )}
-                    </h6>
-                    <div>
-                        <span>{first_air_date?.replace("-", " ")}</span>
-                        <br />
-                        <span>Rating: {vote_average}</span>
-                        <br />
-                        <span>Country: {origin_country}</span>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 }

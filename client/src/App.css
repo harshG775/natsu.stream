@@ -1,10 +1,6 @@
 .body {
     min-height: 100vh;
 }
-
-nav ul {
-    display: flex;
-}
 footer ul {
     display: flex;
 }
