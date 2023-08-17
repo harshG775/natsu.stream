@@ -1,33 +1,168 @@
 /* :root {
-    --primary-color: hsl(360, 100%, 63%);
+    --primaryColor: hsl(360, 100%, 63%);
 
-    --secondary-color: #303F9F;
-    --accent-color: #FF8066;
+    --secondaryColor: #303F9F;
+    --accentColor: #FF8066;
 
-    --background-color: #FCF8FF;
-    --text-color: #4B4453;
+    --backgroundColor: #FCF8FF;
+    --textColor: #4B4453;
 } */
-/* temporary css */
+/* temporary css ⬆ */
 
 
 header.navbar {
     position: fixed;
-    top: 0;
-    bottom: -5rem;
+    pointer-events: none;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.top-navbar,.side-navbar  {
+    pointer-events: all;
+    background-color: var(--textColor);
+
+}
+
+
+/* top-navbar */
+.top-navbar {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    box-shadow: 1px 1px 5px var(--accentColor);
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo a {
+    display: flex;
+}
+.search-container {
+    white-space: nowrap;
+}
+.search-container {
+    background-color: var(--accentColor);
+    border-radius: .625rem;
+    overflow: hidden;
+}
+.search-container input {
+    all: unset;
+
+
+    padding: 0.25rem 0.5rem;
+    color: var(--backgroundColor);
+
+    max-width: 5rem;
+    transition: max-width 0.3s;
+}
+.search-container input:focus {
+    max-width: 10rem;
+
+}
+.search-container button {
+    border: unset;
+    background-color: unset;
+    padding-right: 1rem;
+}
+
+
+
+/* side-navbar */
+.side-navbar {
+    overflow: hidden;
+    
+    position: absolute;
+    height: 100%;
+    padding-top: 4rem;
+
+}
+
+.side-navbar .nav-links {
+    padding: 0.8rem 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.3rem;
+    height: 100%;
+}
+.side-navbar .nav-links a {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+}
+.side-navbar .nav-links a span:nth-child(2) {
+    padding-left: 1.5rem;
+}
+
+/* user */
+.side-navbar .nav-links .user{
+    margin-top: auto;
+}
+
+/*  */
+@media (min-width: 767px) {
+    .side-navbar{
+        width: 4rem;
+        /* width: 11rem; */
+        transition: width 0.2s;
+    }
+    .side-navbar:hover {
+        width: 11rem;
+    }
+    
+}
+/*  */
+@media (max-width: 768px) {
+    .side-navbar {
+        padding-top: unset;
+        height: unset;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .side-navbar .nav-links {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.8rem 10vw 0.5rem;
+        align-items: center;
+    }
+    .side-navbar .nav-links a span:nth-child(2){
+        display: none;
+    }
+}
+
+
+@media (max-width: 68px) {
+    /* theme-toggle */
+.theme-toggle {
+    pointer-events: all;
+    position: fixed;
+    bottom: 8rem;
+    right: 1rem;
+}
+/* navlinks */
+.navbar-inner{
+    pointer-events: all;
     background-color: var(--background-color);
     color: var(--text-color);
 
-}
-.navbar-inner{
-    height: 100dvh;
-
-
-
+    position: relative;
+    height: calc(100dvh - 58px);
+    width: 10rem;
+    bottom: -58px;
 
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.3rem 1rem;
 }
 /* menu toggle */
 
@@ -40,13 +175,6 @@ header.navbar {
     display: flex;
 }
 
-.menuToggle {
-    font-size: 1.25rem;
-    cursor: pointer;
-    position: absolute;
-    right: 0.2rem;
-}
-
 
 /* Nav Links */
 nav.nav-links {
@@ -57,20 +185,24 @@ nav.nav-links {
 .nav-links ul{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
 }
 .nav-links li a{
     display: flex;
     align-items: center;
     gap: .5rem;
+    font-size: 1.3rem;
 }
 
 
-
-/* theme-toggle */
-.theme-toggle {
-    
+.menuToggle {
+    font-size: 1.25rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0.2rem;
 }
+
 button{
     cursor: pointer;
 
@@ -81,5 +213,36 @@ button{
     display: flex;
     justify-content: center;
     padding: .2rem .1rem 0 .1rem;
+
+}
+
+
+/* top-navbar */
+.top-navbar {
+    position: fixed;
+    pointer-events: all;
+    background-color: var(--background-color);
+    display: flex;
+    width: 100%;
+    padding: .5rem;
+}
+
+@media (max-width: 768px) {
+    .navbar-inner{
+        position: fixed;
+        height: unset;
+        width: 100%;
+        bottom: 0rem;
+        flex-direction: row;
+    }
+    .nav-links ul{
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    .nav-links ul li span{
+        display: none;
+    }
+}
 
 }

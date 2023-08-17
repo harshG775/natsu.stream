@@ -1,6 +1,15 @@
 .body {
     min-height: 100vh;
+    margin-top: 4rem;
+    padding-left: 4rem;
 }
+
+@media (max-width: 768px) {
+    .body {
+        padding-left: 0rem;
+    }
+}
+
 footer ul {
     display: flex;
 }

@@ -15,36 +15,173 @@
 
 
     /* initial colors */
-    --primary-color: hsl(360, 100%, 63%);
+    --primaryColor: hsl(360, 100%, 63%);
 
-    --secondary-color: #303F9F;
-    --accent-color: #FF8066;
+    --secondaryColor: #303F9F;
+    --accentColor: #FF8066;
 
-    --background-color: #FCF8FF;
-    --text-color: #4B4453;
+    --backgroundColor: #FCF8FF;
+    --textColor: #4B4453;
     /* <> */
 
 
 
     color-scheme: light;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
 }
 .header {
-    background-color: var(--primary-color);
+    background-color: var(--primaryColor);
 }
 
 .button {
-    background-color: var(--secondary-color);
-    color: var(--background-color);
+    background-color: var(--secondaryColor);
+    color: var(--backgroundColor);
 }
 
 a {
     display: inline-block;
-    color: var(--accent-color);
+    color: var(--accentColor);
 }
 
 a,ul {
     text-decoration: none;
     list-style-type: none;
+}
+
+
+
+/*  */
+/* CSS Snippet */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* container */
+.maxContainer {
+    margin: auto;
+    max-width: 1400px;
+    transition: max-width 0.1s;
+}
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.6rem;
+}
+h3 {
+    font-size: 2.3rem;
+}
+h4 {
+    font-size: 2.1rem;
+}
+h5 {
+    font-size: 2rem;
+}
+h6 {
+    font-size: 1.9rem;
+}
+
+@media (max-width: 1400px) {
+    .maxContainer {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .maxContainer {
+        max-width: 992px;
+    }
+    h1 {
+        font-size: 2.75rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 2.25rem;
+    }
+    h4 {
+        font-size: 2rem;
+    }
+    h5 {
+        font-size: 1.75rem;
+    }
+    h6 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .maxContainer {
+        max-width: 768px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
+    h5 {
+        font-size: 1.25rem;
+    }
+    h6 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .maxContainer {
+        max-width: 576px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    h3 {
+        font-size: 1.3rem;
+    }
+    h4 {
+        font-size: 1.1rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+    h6 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .maxContainer {
+        max-width: unset;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h5 {
+        font-size: 0.9rem;
+    }
+    h6 {
+        font-size: 0.8rem;
+    }
 }

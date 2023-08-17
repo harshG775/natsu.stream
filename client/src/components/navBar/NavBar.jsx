@@ -7,57 +7,101 @@ import ThemeToggle from "../themeToggle/ThemeToggle";
 export default function NavBar() {
     return (
         <header className='navbar'>
-            <div className='navbar-inner'>
-                <div className='logo'>
-                    <Link to={"/"}>
-                        <h4 className="img"><i className="fa-solid fa-dragon"></i></h4>
-                         <span>log name</span>
-                    </Link>
-                    <i className="menuToggle fa-solid fa-square-caret-left"></i>
-                </div>
-                <nav className='nav-links'>
-                    <ul>
-                        <li>
-                            <Link to={"/"}>
-                                <i className='fa-solid fa-house'></i>
-                                <span>Home</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to={"/movies"}>
-                                <i className='fa-solid fa-film'></i>
-                                <span>Movie</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to={"/tvshow"}>
-                                <i className='fa-solid fa-tv'></i>
-                                <span>Tv Show</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to={"/search"}>
-                                <i className='fa-solid fa-magnifying-glass'></i>
-                                <span>Search</span>
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
-                <div className='user'>
-                    <img src='profile' alt='User Profile' />
-                    <div>
-                        <Link to={"user"}>Username</Link>
-                    </div>
-                    <div className='theme-toggle'>
-                        <ThemeToggle >
-                            <i className="fa-solid fa-circle-half-stroke"></i>
-                            THEME
-                        </ThemeToggle>
-                        
-                    </div>
-                </div>
-            </div>
+            <TopNavBar />
+            <SideNavBar />
         </header>
+    );
+}
+
+function TopNavBar() {
+    const [qInput,setQInput] = useState("")
+    
+    const navigate = useNavigate();
+    
+    const searchSubmitHandle=(e)=>{
+        e.preventDefault()
+        if (qInput.trim() !== '') {
+            navigate(`/q/${qInput.replace(" ", "+")}`);
+        } else {
+            console.log('Input is empty. Search not allowed.');
+        }
+        setQInput("")
+    }
+    return (
+        <nav className="top-navbar">
+            <div className='logo'>
+                <Link to={"/"}>
+                    <div className='img'>
+                        <i className='fa-solid fa-dragon'></i>
+                    </div>
+                    <span>LOGO name</span>
+                </Link>
+                {/* <i className='menuToggle fa-solid fa-square-caret-left'></i> */}
+            </div>
+            <form className="search-container" action='/' onSubmit={searchSubmitHandle}>
+                <input
+                    type='text'
+                    placeholder='Search'
+                    value={qInput}
+                    onChange={(e) => setQInput(e.target.value)}
+                />
+                <button type='submit'>
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </nav>
+    );
+}
+
+
+function SideNavBar() {
+    return (
+        <nav className='side-navbar'>
+            <ul className='nav-links'>
+                <li>
+                    <Link to={"/"}>
+                        <span><i className='fa-solid fa-house'></i></span>
+                        <span>Home</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to={"/search"}>
+                        <span><i className='fa-solid fa-magnifying-glass'></i></span>
+                        <span>Search</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to={"/movies"}>
+                        <span><i className='fa-solid fa-film'></i></span>
+                        <span>Movie</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to={"/tvshow"}>
+                        <span><i className="fa-solid fa-desktop"></i></span>
+                        <span>Tv Show</span>
+                    </Link>
+                </li>
+                <li className='user'>
+                    <Link to={"user"}>
+                        {/* <img src='profile' alt='' /> */}
+                        <span><i className="fa-solid fa-user"></i></span>
+                        <span>User</span>
+                    </Link>
+                </li>
+            </ul>
+        </nav>
+    );
+}
+
+function Theme() {
+    return (
+        <div className='theme-toggle'>
+            <ThemeToggle>
+                <i className='fa-solid fa-circle-half-stroke'></i>
+                THEME
+            </ThemeToggle>
+        </div>
     );
 }
 
@@ -91,31 +135,31 @@ export default function NavBar() {
 // }
 
 // function SearchInput() {
-//     const [qInput,setQInput] = useState("")
+    // const [qInput,setQInput] = useState("")
     
-//     const navigate = useNavigate();
+    // const navigate = useNavigate();
     
-//     const searchSubmitHandle=(e)=>{
-//         e.preventDefault()
-//         if (qInput.trim() !== '') {
-//             navigate(`/q/${qInput.replace(" ", "+")}`);
-//         } else {
-//             console.log('Input is empty. Search not allowed.');
-//         }
-//         setQInput("")
-//     }
+    // const searchSubmitHandle=(e)=>{
+    //     e.preventDefault()
+    //     if (qInput.trim() !== '') {
+    //         navigate(`/q/${qInput.replace(" ", "+")}`);
+    //     } else {
+    //         console.log('Input is empty. Search not allowed.');
+    //     }
+    //     setQInput("")
+    // }
 //     return (     
-//         // <nav className="nav-search">
-//             <form action='/' onSubmit={searchSubmitHandle}>
-//                 <input
-//                     type='text'
-//                     placeholder='Search'
-//                     value={qInput}
-//                     onChange={(e) => setQInput(e.target.value)}
-//                 />
-//                 <button type='submit'>Search</button>
-//             </form>
-//         // </nav>
+        // // <nav className="nav-search">
+        //     <form action='/' onSubmit={searchSubmitHandle}>
+        //         <input
+        //             type='text'
+        //             placeholder='Search'
+        //             value={qInput}
+        //             onChange={(e) => setQInput(e.target.value)}
+        //         />
+        //         <button type='submit'>Search</button>
+        //     </form>
+        // // </nav>
 //     );
 // }
 
