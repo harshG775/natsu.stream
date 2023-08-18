@@ -7,9 +7,10 @@
     padding: 1rem;
     padding: 0.8rem 1rem;
     box-shadow: 1px 1px 5px var(--accentColor);
-    max-width: 700px;
 }
 
+
+/* logo */
 .logo {
     display: flex;
     align-items: center;
@@ -17,6 +18,12 @@
 
 .logo a {
     display: flex;
+    gap: .25rem;
+    transition: text-shadow 0.3s;
+    font-weight: 500;
+}
+.logo a:hover {
+    text-shadow: -1px -1px var(--backgroundColor);
 }
 
 /* search container */
