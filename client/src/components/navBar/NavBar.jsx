@@ -1,11 +1,8 @@
 import { Link,useNavigate} from "react-router-dom";
 import "./navBar.css"
 import { useState } from "react";
-import ThemeToggle from "../themeToggle/ThemeToggle";
-
-
 export default function NavBar() {
-    
+
     return (
         <header className='navbar'>
             <TopNavBar/>
@@ -93,18 +90,6 @@ function SideNavBar() {
         </nav>
     );
 }
-
-function Theme() {
-    return (
-        <div className='theme-toggle'>
-            <ThemeToggle>
-                <i className='fa-solid fa-circle-half-stroke'></i>
-                THEME
-            </ThemeToggle>
-        </div>
-    );
-}
-
 
 
 

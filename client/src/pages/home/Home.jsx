@@ -20,36 +20,36 @@ export default function HomePage() {
     );
 }
 
-
-
 /* sections */
+// import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 /* hero section */
 function Hero() {
-    return (
-        <div className='carousel'>
-            <Trending />
-        </div>
-    );
-}
-/* Trending or top-20 section */
-function Trending() {
     const [trending, setTrending] = useState([]);
     useEffect(() => {
         TMDB.getTrendingPage("movie", 1, "day").then((data) =>
             setTrending(data)
         );
     }, []);
-
+    console.log(trending)
     return (
-        <div>
-            {/* <CardItem {...trending?.results}/> */}
+        <Swiper
+            // modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={50}
+            slidesPerView={3}
+            scrollbar={{ draggable: true }}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+        >
             {trending.results?.map((d,key)=>(
-                <CardItem {...d} contentType={"movie"} key={key} />
+                <SwiperSlide key={key} >
+                    <CardItem {...d} contentType={"movie"}/>
+                </SwiperSlide>
             ))}
-        </div>
+        </Swiper>
     );
 }
-
 
 /* Popular or top-20 section */
 function Popular() {

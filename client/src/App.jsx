@@ -47,14 +47,6 @@ function PageRoutes() {
         </>
     );
 }
-
-
 function ErrorPage() {
   return <div>404 Error</div>;
 }
-
-
-
-// function ThemeToggle() {
-//   return <div>ThemeToggle</div>;
-// }

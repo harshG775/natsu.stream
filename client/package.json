@@ -7,13 +7,13 @@
     "start": "vite",
     "netlify": "vite build",
     "build": "vite build --outDir ../server/public",
-    
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "swiper": "^10.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -26,5 +26,5 @@
     "react-router-dom": "^6.14.2",
     "vite": "^4.4.5"
   },
-  "proxy":"http://localhost:3030"
+  "proxy": "http://localhost:3030"
 }

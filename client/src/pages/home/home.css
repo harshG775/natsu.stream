@@ -1,9 +1,18 @@
-
-.carousel >div {
+.carousel {
+}
+/* .carousel {
     display: flex;
     overflow-x: scroll;
+    scroll-snap-type: y mandatory;
+    
 }
+.carousel div {
+    
+    scroll-snap-align: start;
+} */
 
+
+/*  */
 .item-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(185px,1fr));
