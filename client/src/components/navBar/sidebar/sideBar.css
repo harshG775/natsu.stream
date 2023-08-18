@@ -49,6 +49,7 @@
 /*  */
 @media (max-width: 768px) {
     .side-navbar {
+        overflow: unset;
         padding-top: unset;
         height: unset;
 

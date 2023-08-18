@@ -3,6 +3,28 @@ import { useState } from "react";
 import "./topBar.css"
 
 export default function TopNavBar() {
+    return (
+        <nav className="top-navbar">
+            <NavLogo/>
+            <SearchBox/>
+        </nav>
+    );
+}
+// navLogo
+function NavLogo() {
+    return (
+        <div className='logo'>
+            <Link to={"/"}>
+                <div className='img'>
+                    <i className='fa-solid fa-dragon'></i>
+                </div>
+                <span>Natsu G</span>
+            </Link>
+        </div>
+    );
+}
+
+function SearchBox() {
     const [QInput,setQInput] =useState("")
     const navigate = useNavigate();
     
@@ -13,31 +35,20 @@ export default function TopNavBar() {
         } else {
             console.log('Input is empty. Search not allowed.');
         }
-        // setQInput("")
+        setQInput("")
     }
     return (
-        <nav className="top-navbar">
-            <div className='logo'>
-                <Link to={"/"}>
-                    <div className='img'>
-                        <i className='fa-solid fa-dragon'></i>
-                    </div>
-                    <span>LOGO name</span>
-                </Link>
-                {/* <i className='menuToggle fa-solid fa-square-caret-left'></i> */}
-            </div>
-            <form className="search-container" action='/' onSubmit={searchSubmitHandle}>
-                <input
-                    type='text'
-                    placeholder='Search'
-                    value={QInput}
-                    onChange={(e) => setQInput(e.target.value)}
-                />
-                <button type='submit'>
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </form>
-        </nav>
+        <form className='search-container' action='/' onSubmit={searchSubmitHandle}>
+            <input
+                type='text'
+                placeholder='Search'
+                value={QInput}
+                onChange={(e) => setQInput(e.target.value)}
+            />
+            <button type='submit'>
+                <i className='fa-solid fa-magnifying-glass'></i>
+            </button>
+        </form>
     );
 }
 
@@ -54,14 +65,6 @@ export default function TopNavBar() {
 //                 <NvaLinks/>
 //             </div>
 //         </header>
-//     );
-// }
-
-// function Logo() {
-//     return (
-//         <div className="nav-logo">
-//             <Link to={"/"}>Logo</Link>
-//         </div>
 //     );
 // }
 
