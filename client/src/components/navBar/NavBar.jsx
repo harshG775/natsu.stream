@@ -5,27 +5,27 @@ import ThemeToggle from "../themeToggle/ThemeToggle";
 
 
 export default function NavBar() {
+    
     return (
         <header className='navbar'>
-            <TopNavBar />
-            <SideNavBar />
+            <TopNavBar/>
+            <SideNavBar/>
         </header>
     );
 }
 
 function TopNavBar() {
-    const [qInput,setQInput] = useState("")
-    
+    const [QInput,setQInput] =useState("")
     const navigate = useNavigate();
     
     const searchSubmitHandle=(e)=>{
         e.preventDefault()
-        if (qInput.trim() !== '') {
-            navigate(`/q/${qInput.replace(" ", "+")}`);
+        if (QInput.trim() !== '') {
+            navigate(`search/q/${QInput.replace(" ", "+")}`);
         } else {
             console.log('Input is empty. Search not allowed.');
         }
-        setQInput("")
+        // setQInput("")
     }
     return (
         <nav className="top-navbar">
@@ -42,7 +42,7 @@ function TopNavBar() {
                 <input
                     type='text'
                     placeholder='Search'
-                    value={qInput}
+                    value={QInput}
                     onChange={(e) => setQInput(e.target.value)}
                 />
                 <button type='submit'>
@@ -65,8 +65,8 @@ function SideNavBar() {
                     </Link>
                 </li>
                 <li>
-                    <Link to={"/search"}>
-                        <span><i className='fa-solid fa-magnifying-glass'></i></span>
+                    <Link to={`/explore`}>
+                        <span><i className="fa-solid fa-compass"></i></span>
                         <span>Search</span>
                     </Link>
                 </li>

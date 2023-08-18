@@ -53,7 +53,7 @@ header.navbar {
 
 
     padding: 0.25rem 0.5rem;
-    color: var(--backgroundColor);
+    color: var(--textColor);
 
     max-width: 5rem;
     transition: max-width 0.3s;
@@ -62,10 +62,14 @@ header.navbar {
     max-width: 10rem;
 
 }
+.search-container input:focus {
+    color: var(--backgroundColor);
+}
 .search-container button {
     border: unset;
     background-color: unset;
     padding-right: 1rem;
+    cursor: pointer;
 }
 
 
@@ -140,6 +144,7 @@ header.navbar {
 }
 
 
+/* old code */
 @media (max-width: 68px) {
     /* theme-toggle */
 .theme-toggle {
