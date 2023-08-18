@@ -1,32 +1,58 @@
-/* :root {
-    --primaryColor: hsl(360, 100%, 63%);
-
-    --secondaryColor: #303F9F;
-    --accentColor: #FF8066;
-
-    --backgroundColor: #FCF8FF;
-    --textColor: #4B4453;
-} */
-/* temporary css ⬆ */
-
-
-header.navbar {
-    z-index: 10;
-    position: fixed;
-    pointer-events: none;
-    inset: 0;
-    right: -1px; /* this is for right side gap */
+/* top-navbar */
+.top-navbar {
+    z-index: 1;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    padding: 0.8rem 1rem;
+    box-shadow: 1px 1px 5px var(--accentColor);
 }
 
-.top-navbar,
-.side-navbar {
-    pointer-events: all;
-    background-color: var(--textColor);
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+}
+
+.search-container {
+    white-space: nowrap;
+}
+
+.search-container {
+    background-color: var(--accentColor);
+    border-radius: .625rem;
+    overflow: hidden;
+}
+
+.search-container input {
+    all: unset;
+
+
+    padding: 0.25rem 0.5rem;
+    color: var(--textColor);
+
+    max-width: 5rem;
+    transition: max-width 0.3s;
+}
+
+.search-container input:focus {
+    max-width: 10rem;
 
 }
+
+.search-container input:focus {
+    color: var(--backgroundColor);
+}
+
+.search-container button {
+    border: unset;
+    background-color: unset;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
 
 
 

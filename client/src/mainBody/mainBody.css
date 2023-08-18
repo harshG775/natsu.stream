@@ -1,0 +1,45 @@
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+#top-gap {
+    height: 3.625rem;
+}
+
+#main-body {
+    flex: 1;
+    overflow-y: scroll;
+}
+
+#bottom-gap {
+    height: 0px;
+}
+
+@media (max-width: 768px) {
+    #bottom-gap {
+        height: 3.625rem;
+    }
+}
+
+/* scroll bar */
+#main-body {
+    scrollbar-color: var(--accentColor) transparent;
+    scrollbar-width: thin;
+}
+
+#main-body::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: var(--accentColor);
+}
+
+#main-body::-webkit-scrollbar {
+    width: 10px;
+}
+
+#main-body::-webkit-scrollbar-thumb {
+    background-color: var(--accentColor);
+    /* outline: 1px solid var(); */
+}

@@ -1,11 +1,11 @@
 .body {
     min-height: 100vh;
-    padding: 4rem 1rem 0rem 4.5rem;
+    padding: 0 1rem 0rem 4.5rem;
 }
 
 @media (max-width: 768px) {
     .body {
-        padding: 4rem 0rem 0rem;
+        padding: 0 0rem 0rem;
     }
 }
 

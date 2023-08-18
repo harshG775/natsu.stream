@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .top {
+            padding: 1rem;
+            background-color: rebeccapurple;
+        }
+        .bottom{
+                display: none;
+            }
+        
+        #body {
+            flex: 1;
+            overflow-y: scroll;
+        }
+        @media (max-width:700px) {
+            .bottom {
+                display: block;
+                padding: 1rem;
+                background-color: rgb(33, 32, 34);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="top">top</div>
+    <div id="body">
+        <h1>body</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <h1>body</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <h1>body</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <h1>body</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <h1>body</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <h1>body</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <h1>body</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, in.</p>
+    </div>
+    <div class="bottom">bottom</div>
+</body>
+</html>
