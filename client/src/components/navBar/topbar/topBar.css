@@ -1,3 +1,20 @@
+:root {
+    /* initial colors */
+    --primary_color: #ff4242;
+
+    --secondary_color: #303F9F;
+    --accent_color: #FF8066;
+
+    --background_color: #FCF8FF;
+    --text_color: #4B4453;
+
+    color-scheme: light;
+    background-color: var(--background_color);
+    color: var(--text_color);
+    /* <> */
+
+}
+
 /* top-navbar */
 .top-navbar {
     z-index: 1;
@@ -6,7 +23,7 @@
     gap: 1rem;
     padding: 1rem;
     padding: 0.8rem 1rem;
-    box-shadow: 1px 1px 5px var(--accentColor);
+    box-shadow: 1px 1px 5px var(--accent_color);
 }
 
 
@@ -23,7 +40,7 @@
     font-weight: 500;
 }
 .logo a:hover {
-    text-shadow: -1px -1px var(--backgroundColor);
+    text-shadow: -1px -1px var(--text_color);
 }
 
 /* search container */
@@ -34,12 +51,12 @@ form.search-container {
 }
 .search-container input {
     all: unset;
-    color: var(--backgroundColor);
-    border: 1.5px solid var(--accentColor);
+    color: var(--accent_color);
+    border: 1.5px solid var(--accent_color);
     border-radius: 0.5rem;
     padding: 0.25rem 0.5rem;
 
-    width: 10%;
+    width: 15%;
     padding-right: 2rem;
     transition: width 0.3s;
 }
@@ -50,13 +67,13 @@ form.search-container {
     border: unset;
     cursor: pointer;
     background-color: transparent;
-    color: var(--backgroundColor);
+    color: var(--accent_color);
     position: relative;
     left: -2rem;
     
 }
 .search-container button i {
-    border-left: 1px solid var(--accentColor);
+    border-left: 1px solid var(--accent_color);
     padding: 0.2rem 0.5rem;
 
 }

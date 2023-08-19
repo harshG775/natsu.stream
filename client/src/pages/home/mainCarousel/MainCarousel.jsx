@@ -35,6 +35,7 @@ export default function MainCarousel() {
             }}
             pagination={{
                 dynamicBullets: true,
+                clickable: true,
             }}
             navigation={false}
             

@@ -1,17 +1,31 @@
 :root {
-    /* initial txt and bg colors */
-    --background-color: #FCF8FF;
-    --text-color: #242424;
+    /* initial colors */
+    --primary_color: #ff4242;
 
+    --secondary_color: #303F9F;
+    --accent_color: #FF8066;
 
-    /* light mode */
+    --background_color: #FCF8FF;
+    --text_color: #4B4453;
+
     color-scheme: light;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--background_color);
+    color: var(--text_color);
+    /* <> */
 }
-/* dark mode */
+
 .dark-mode {
+    /* Dark theme */
+    --primary_color: #ff4242;
+
+    --secondary_color: #303F9F;
+    --accent_color: #FF8066;
+
+    --background_color: #2b2b2b;
+    --text_color: #e0e0e0;
+
     color-scheme: dark;
-    background-color: var(--text-color);
-    color: var(--background-color);
+    background-color: var(--background_color);
+    color: var(--text_color);
+    /* <> */
 }

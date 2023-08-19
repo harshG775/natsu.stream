@@ -7,36 +7,21 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
-
-
-    /* initial colors */
-    --primaryColor: hsl(360, 100%, 63%);
-
-    --secondaryColor: #303F9F;
-    --accentColor: #FF8066;
-
-    --backgroundColor: #FCF8FF;
-    --textColor: #4B4453;
-    /* <> */
-
-
-
-    color-scheme: light;
-    background-color: var(--backgroundColor);
-    color: var(--textColor);
 }
+
+
 .header {
-    background-color: var(--primaryColor);
+    background-color: var(--primary_color);
 }
 
 .button {
-    background-color: var(--secondaryColor);
-    color: var(--backgroundColor);
+    background-color: var(--secondary_color);
+    color: var(--background_color);
 }
 
 a {
     display: inline-block;
-    color: var(--accentColor);
+    color: var(--accent_color);
 }
 
 a,ul {
