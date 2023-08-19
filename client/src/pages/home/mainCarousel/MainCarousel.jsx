@@ -1,4 +1,4 @@
-import { useRef,useEffect,useState} from 'react';
+import { useEffect,useState} from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -13,12 +13,9 @@ import './mainCarousel.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 import { TMDB } from '../../../../modules/fetching';
-import CardItem from '../../../components/cardItem/CardItem';
+import CarouselItem from './carouselItem/CarouselItem';
 
 export default function MainCarousel() {
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-
 
   const [trending, setTrending] = useState([]);
   useEffect(() => {
@@ -28,33 +25,28 @@ export default function MainCarousel() {
   }, []);
   console.log(trending)
   return (
-      <>
-          <Swiper
-              spaceBetween={30}
-              centeredSlides={true}
-              autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-              }}
-              pagination={{
+    <>
+        <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+            }}
+            pagination={{
                 dynamicBullets: true,
-              }}
-              navigation={false}
-              modules={[Autoplay, Pagination, Navigation]}
-              className='mySwiper'
-          >
-              {trending.results?.map((d, key) => (
-                  <SwiperSlide key={key}>
-                      <CardItem {...d} contentType={"movie"} />
-                  </SwiperSlide>
-              ))}
-              <div className='autoplay-progress' slot='container-end'>
-                  <svg viewBox='0 0 48 48' ref={progressCircle}>
-                      <circle cx='24' cy='24' r='20'></circle>
-                  </svg>
-                  <span ref={progressContent}></span>
-              </div>
-          </Swiper>
-      </>
+            }}
+            navigation={false}
+            
+            // modules={[Autoplay, Pagination, Navigation]}
+            className='mySwiper'
+        >
+            {trending.results?.map((d, key) => (
+                <SwiperSlide className='main-item' key={key}>
+                    <CarouselItem {...d} />
+                </SwiperSlide>
+            ))}
+        </Swiper>
+    </>
   );
 }
