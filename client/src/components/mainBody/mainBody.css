@@ -30,13 +30,13 @@
 
 /* scroll bar */
 #main-body {
-    scrollbar-color: var(--accentColor) transparent;
+    scrollbar-color: var(--accent_color) transparent;
     scrollbar-width: thin;
 }
 
 #main-body::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    background-color: var(--accentColor);
+    background-color: var(--accent_color);
 }
 
 #main-body::-webkit-scrollbar {
@@ -44,6 +44,6 @@
 }
 
 #main-body::-webkit-scrollbar-thumb {
-    background-color: var(--accentColor);
+    background-color: var(--accent_color);
     /* outline: 1px solid var(); */
 }

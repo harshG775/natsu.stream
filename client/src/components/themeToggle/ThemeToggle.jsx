@@ -1,9 +1,12 @@
 import "./themeToggle.css"
 
 export default function ThemeToggle(prop) {
-    const root = document.getElementById("root");
+    const elements = document.querySelectorAll('[data="theme"]');
+    console.log(elements)
     function toggleHandle() {
-        root.classList.toggle("dark-mode");
+        elements.forEach(element => {
+            element.classList.toggle("dark-mode");
+        });
     }
     return <button onClick={toggleHandle}>{prop.children}</button>;
 }

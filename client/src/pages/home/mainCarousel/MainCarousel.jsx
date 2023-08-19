@@ -38,7 +38,7 @@ export default function MainCarousel() {
             }}
             navigation={false}
             
-            // modules={[Autoplay, Pagination, Navigation]}
+            modules={[Autoplay, Pagination, Navigation]}
             className='mySwiper'
         >
             {trending.results?.map((d, key) => (
