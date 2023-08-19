@@ -1,20 +1,3 @@
-:root {
-    /* initial colors */
-    --primary_color: #ff4242;
-
-    --secondary_color: #303F9F;
-    --accent_color: #FF8066;
-
-    --background_color: #FCF8FF;
-    --text_color: #4B4453;
-
-    color-scheme: light;
-    background-color: var(--background_color);
-    color: var(--text_color);
-    /* <> */
-
-}
-
 /* top-navbar */
 .top-navbar {
     z-index: 1;
