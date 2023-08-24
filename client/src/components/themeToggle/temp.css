@@ -1,0 +1,27 @@
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .header {
+    background-color: var(--main-color);
+    color: var(--text-color);
+  }
+  
+  .button {
+    background-color: var(--main-color);
+    color: white;
+  }
+  
+  .accent {
+    color: var(--accent-color);
+  }
+  
+  .complementary {
+    color: var(--complementary-color);
+  }
+  
+  .neon {
+    color: var(--neon-color);
+  }
+  
