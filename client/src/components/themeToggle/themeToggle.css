@@ -1,6 +1,7 @@
 :root {
     --primary_color: #FF5733;           /* Fire Red */
-    --background_color: #121212;        /* Dark Gray Background */
+    --background_color: #141519;        /* Dark Gray Background */
+    --background_color_lighter: #202128;        /* Dark Gray Background */
     --text_color: #CCCCCC;              /* Light Gray Text */
     --accent_color: #FF8C66;            /* Subtle Gradient Accent */
     --complementary_color: #4CAF50;     /* Complementary Green */

@@ -4,10 +4,12 @@ import "./topBar.css"
 
 export default function TopNavBar() {
     return (
-        <nav className="top-navbar">
-            <NavLogo/>
-            <SearchBox/>
-        </nav>
+        <header className="top-navbar-outer maxContainer">
+            <nav className="top-navbar">
+                <NavLogo/>
+                <SearchBox/>
+            </nav>
+        </header>
     );
 }
 // navLogo

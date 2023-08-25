@@ -1,12 +1,12 @@
 /* top-navbar */
+.top-navbar-outer {
+}
 .top-navbar {
-    z-index: 1;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     padding: 1rem;
     padding: 0.8rem 1rem;
-    box-shadow: 1px 1px 5px var(--accent_color);
 }
 
 
@@ -21,10 +21,9 @@
     gap: .25rem;
     transition: text-shadow 0.3s;
     font-weight: 500;
+    color: var(--primary_color);
 }
-.logo a:hover {
-    text-shadow: -1px -1px var(--text_color);
-}
+
 
 /* search container */
 form.search-container {
@@ -34,8 +33,7 @@ form.search-container {
 }
 .search-container input {
     all: unset;
-    color: var(--accent_color);
-    border: 1.5px solid var(--accent_color);
+    border: 1px solid var(--text_color);
     border-radius: 0.5rem;
     padding: 0.25rem 0.5rem;
 
@@ -50,13 +48,13 @@ form.search-container {
     border: unset;
     cursor: pointer;
     background-color: transparent;
-    color: var(--accent_color);
+    color: var(--text_color);
     position: relative;
     left: -2rem;
     
 }
 .search-container button i {
-    border-left: 1px solid var(--accent_color);
+    border-left: 1px solid var(--text_color);
     padding: 0.2rem 0.5rem;
 
 }

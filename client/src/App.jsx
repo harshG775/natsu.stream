@@ -10,15 +10,22 @@ import UserPage from "./pages/user/User";
 import SearchPage from "./pages/search/Search";
 import Content from "./pages/content/Content";
 
-import NavBar from "./components/navBar/NavBar";
+import TopNavBar from "./components/navBar/topbar/TopBar";
+import SideNavBar from "./components/navBar/sidebar/SideBar";
 import Footer from "./components/footer/Footer";
 import "./App.css";
 
 export default function App() {
     return (
         <BrowserRouter>
-            <NavBar />
-            <PageRoutes />
+
+            <SideNavBar />
+            <MainBody>
+                <TopNavBar/>
+                <PageRoutes />
+                <Footer />
+            </MainBody>
+            
         </BrowserRouter>
     );
 }
@@ -26,10 +33,9 @@ export default function App() {
 // pages routes
 function PageRoutes() {
     return (<>
-    
-        <MainBody>
             <Routes>
                 <Route path='/' element={<HomePage />} />
+                <Route path='/discover' element={"<MoviesPage />"} />
                 <Route path='/movies' element={<MoviesPage />} />
                 <Route path='/tvshow' element={<TvShowPage />} />
                 <Route path='/user' element={<UserPage />} />
@@ -41,8 +47,6 @@ function PageRoutes() {
                 {/*  */}
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
-            <Footer />
-        </MainBody>
         </>);
 }
 function ErrorPage() {

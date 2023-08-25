@@ -7,13 +7,13 @@ import "./home.css"
 import MainCarousel from "./mainCarousel/MainCarousel";
 export default function HomePage() {
     return (
-        <div className='body maxContainer'>
+        <main className="maxContainer">
             <MainCarousel/>
             <div className='trending'>
                 <h2>movies</h2>
                 <Popular />
             </div>
-        </div>
+        </main>
     );
 }
 
