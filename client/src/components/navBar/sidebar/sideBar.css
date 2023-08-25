@@ -58,13 +58,8 @@
 @media (min-width: 577px) {
     .side-navbar {
         width: 4rem;
-        /* width: 11rem; */
         transition: width 0.2s;
     }
-
-    /* .side-navbar{
-        width: 11rem;
-    } */
     .side-navbar:hover {
         width: 11rem;
     }
@@ -89,11 +84,13 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        padding: 0.8rem 10vw 0.5rem;
+        padding: 0rem 10vw 0rem;
         align-items: center;
     }
-
     .side-navbar .nav-links a span:nth-child(2) {
         display: none;
+    }
+    .side-navbar .nav-links a i {
+        width: unset;
     }
 }
