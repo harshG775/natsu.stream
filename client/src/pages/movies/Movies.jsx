@@ -1,34 +1,36 @@
 /* movies page */
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import CardItem from "../../components/cardItem/CardItem";
-
-import "./movies.css"
-import {TMDB }from "../../../modules/fetching"
+import Pagination from "../../components/pagination/Pagination";
+import "./movies.css";
+import { TMDB } from "../../../modules/fetching";
 export default function MoviesPage() {
-    const [trending, setTrending] = useState([]);
-    useEffect(() => {
-        TMDB.getTrendingPage("movie", 1,"day").then((data) =>
-            setTrending(data),
-        );
-    }, []);
     return (
-        <main id="movies" className="maxContainer">
+        <main id='movies' className='maxContainer'>
             <header>
                 <h2>Movies</h2>
             </header>
-            <section className="trending">
-                <h6>Trending</h6>
-                <div className="item-container">
-                    {trending.results?.map((e,key)=>(
-                        <CardItem {...e}  contentType={"movie"} key={key} />
-
-                    ))}
-                </div>
-            </section>
+            <Trending />
         </main>
     );
 }
 
-function Popular() {
-  return <div>Popular</div>;
+function Trending() {
+    const [trending, setTrending] = useState([]);
+    useEffect(() => {
+        TMDB.getTrendingPage("movie", 1, "day").then((data) =>
+            setTrending(data)
+        );
+    }, []);
+    return (
+        <section>
+            <h6>Trending</h6>
+            <div className='item-container'>
+                {trending.results?.map((e, key) => (
+                    <CardItem {...e} contentType={"movie"} key={key} />
+                ))}
+            </div>
+            <Pagination/>
+        </section>
+    );
 }
