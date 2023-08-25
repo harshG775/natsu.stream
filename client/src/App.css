@@ -1,9 +1,6 @@
-@media (max-width: 768px) {
-    .body {
-        padding: 0 0rem 0rem;
-    }
+main {
+    min-height: 100vh;
 }
-
 footer ul {
     display: flex;
 }
@@ -23,22 +20,22 @@ footer ul {
     transition: max-width 0.1s;
 }
 h1 {
-    font-size: 3rem;
+    font-size: 2.75rem;
 }
 h2 {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
 }
 h3 {
-    font-size: 2.3rem;
+    font-size: 2.25rem;
 }
 h4 {
-    font-size: 2.1rem;
-}
-h5 {
     font-size: 2rem;
 }
+h5 {
+    font-size: 1.75rem;
+}
 h6 {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 1400px) {
