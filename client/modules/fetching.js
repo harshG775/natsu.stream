@@ -105,3 +105,15 @@ export const TMDB = {
         //
     },
 };
+
+export const VideScr = {
+    getNewRelease: async function (contentType,pageNumb = 1) {
+        const url = `https://vidsrc.to/vapi/${contentType}/new/${pageNumb}`;
+        return await myFetch(url, options);
+    },
+    getRecentlyAdded: async function (contentType,pageNumb = 1) {
+        const url = `https://vidsrc.to/vapi/${contentType}/add/${pageNumb}`;
+        return await myFetch(url, options);
+    },
+    
+}
