@@ -8,15 +8,23 @@ import { TMDB } from "../../../modules/fetching";
 import CarouselMini from "../../components/carouselMini/CarouselMini";
 
 export default function MoviesPage() {
-return (
+    const [nowPlaying, setNowPlaying] = useState();
+    useEffect(() => {
+        TMDB.movie.getNowPlayingPage().then(resp=>{
+            setNowPlaying(resp)
+        })
+    }, []);
+    return (
         <>
-            <CarouselMini />
+            <CarouselMini nowPlaying={nowPlaying} contentType={"movie"} />
             <main id='movies' className='maxContainer'>
                 <Trending />
             </main>
         </>
     );
 }
+
+
 
 
 

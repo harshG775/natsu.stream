@@ -1,14 +1,22 @@
 /* Tv SHow page */
-export default function TvShowPage() {
-    return (
-        <div className="body">
-            <header>
-                <h2>Tv Show</h2>
-                <div className="carousel">Carousel</div>
-            </header>
-            <main>
+import { useEffect,useState } from "react";
 
-            </main>
-        </div>
+import CarouselMini from "../../components/carouselMini/CarouselMini";
+import { TMDB } from "../../../modules/fetching";
+
+export default function TvShowPage() {
+    const [nowPlaying, setNowPlaying] = useState();
+    useEffect(() => {
+        
+        TMDB.getTrendingPage("tv", 1,"day").then(resp=>{
+            setNowPlaying(resp)
+        })
+    }, []);
+    return (
+        <>
+            <CarouselMini nowPlaying={nowPlaying} contentType={"tv"} />
+            <main id='movies' className='maxContainer'></main>
+        </>
     );
 }
+

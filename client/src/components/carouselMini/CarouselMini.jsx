@@ -1,18 +1,9 @@
-import {useState, useEffect } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import "./carouselMini.css";
-import { TMDB } from "../../../modules/fetching";
-
-export default function CarouselMini() {
-    const [nowPlaying, setNowPlaying] = useState();
-    useEffect(() => {
-        TMDB.movie.getNowPlayingPage().then(resp=>{
-            setNowPlaying(resp)
-        })
-    }, []);
+export default function CarouselMini(prop) {
+    const {nowPlaying,contentType}=prop
     return (
         <div id='CarouselMini'>
             <Swiper
@@ -39,7 +30,7 @@ export default function CarouselMini() {
                     
                     {nowPlaying?.results.map((e,i)=>(
                         <SwiperSlide key={i}>
-                            <Item {...e} contentType={"movie"}/>
+                            <Item {...e} contentType={contentType}/>
                         </SwiperSlide>
                     ))}
             </Swiper>
@@ -48,28 +39,41 @@ export default function CarouselMini() {
 }
 
 function Item(prop) {
+    const {
+        backdrop_path,poster_path,contentType,id,title,
+        name,vote_average,release_date,
+    } = prop;
     console.log(prop)
     return (
         <>
-            <div
-                className='poster'
-                style={{
-                    backgroundImage:`url('https://image.tmdb.org/t/p/w500${prop.poster_path}')`,
-                }}
-            ></div>
+            <style>
+            {`
+                #CarouselMini .poster${id} {
+                    background-image:url('https://image.tmdb.org/t/p/w780${poster_path}');
+                }
+                @media (max-width:768px) {
+                    #CarouselMini .poster${id} {
+                        background-image:url('https://image.tmdb.org/t/p/w780${backdrop_path}') !important;
+                    }
+                }
+            
+            `}
+            </style>
+            <div className={`poster poster${id}`}></div>
             <div className='info'>
-                <a
-                    className='title'
-                    href={`../overview/${prop.contentType}/${prop.id}`}
-                >
-                    {prop.title?prop.title:prop.original_title}
+                <a className='title' href={`../${contentType}/${id}`}>
+                    {title ? title : name}
                 </a>
                 <div className='metadata'>
                     <div className='begin'>
                         <span className='dot'>
-                            <i className="fa-solid fa-star" style={{color:"#ffe568"}} ></i> {prop.vote_average}
+                            <i
+                                className='fa-solid fa-star'
+                                style={{ color: "#ffe568" }}
+                            ></i>
+                            {vote_average}
                         </span>
-                        <span className='dot'>{prop.release_date}</span>
+                        <span className='dot'>{release_date}</span>
                         <span className='dot'>103 min</span>
                     </div>
                     <div className='stop'>
@@ -78,7 +82,7 @@ function Item(prop) {
                     </div>
                 </div>
                 <div className='popup'>
-                    <a className='watch-now' href={`../${prop.contentType}/${prop.id}`}>
+                    <a className='watch-now' href={`../${contentType}/${id}`}>
                         Watch Now
                     </a>
                     <button className='add-to-list'>Add To List</button>
