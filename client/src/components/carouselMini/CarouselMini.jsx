@@ -40,8 +40,8 @@ export default function CarouselMini(prop) {
 
 function Item(prop) {
     const {
-        backdrop_path,poster_path,contentType,id,title,
-        name,vote_average,release_date,
+        backdrop_path,poster_path,contentType,id,title,first_air_date,
+        name,vote_average,release_date,adult,
     } = prop;
     console.log(prop)
     return (
@@ -67,18 +67,16 @@ function Item(prop) {
                 <div className='metadata'>
                     <div className='begin'>
                         <span className='dot'>
-                            <i
-                                className='fa-solid fa-star'
-                                style={{ color: "#ffe568" }}
-                            ></i>
+                            <i className='fa-solid fa-star' style={{ color: "#ffe568" }}></i>
                             {vote_average}
                         </span>
-                        <span className='dot'>{release_date}</span>
-                        <span className='dot'>103 min</span>
+                        <span className='dot'>{first_air_date?first_air_date:release_date}</span>
+                        <span className='dot'>{prop.contentType}</span>
                     </div>
                     <div className='stop'>
+                        <b className='dot'>{prop.original_language}</b>
                         <span className='quality'>HD</span>
-                        <span className='rating'>PG-13</span>
+                        <span className='rating'>{adult?18:""}</span>
                     </div>
                 </div>
                 <div className='popup'>
