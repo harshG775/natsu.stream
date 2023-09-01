@@ -127,4 +127,7 @@
     #CarouselMini .swiper-slide .info {
         bottom: 0px;
     }
+    #CarouselMini .swiper-slide .popup  {
+        transform: scale(1);
+    }
 }
