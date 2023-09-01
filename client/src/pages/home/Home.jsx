@@ -4,11 +4,11 @@ import { TMDB } from "../../../modules/fetching";
 import CardItem from "../../components/cardItem/CardItem";
 import "./home.css"
 
-// import MainCarousel from "./mainCarousel/MainCarousel";
+import MainCarousel from "./mainCarousel/MainCarousel";
 export default function HomePage() {
     return (
         <main id="home-carousel" className="maxContainer">
-            {/* <MainCarousel/> */}
+            <MainCarousel/>
             <div className='trending'>
                 <h2>movies</h2>
                 <Popular />

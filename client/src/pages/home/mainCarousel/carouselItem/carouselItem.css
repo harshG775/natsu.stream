@@ -1,5 +1,5 @@
 
-.main-item {
+#home-carousel .main-item {
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -8,18 +8,18 @@
 }
 
 
-.info {
+#home-carousel .info {
     flex: 2;
     text-align: left;
 }
-.info .title {
+#home-carousel .info .title {
     font-size: clamp(1rem,10w,2rem);
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-.info .synopsis {
+#home-carousel .info .synopsis {
     font-size: clamp(.8rem,10w,1rem);
     overflow: hidden;
     display: -webkit-box;
@@ -29,7 +29,7 @@
 
 
 
-.image {
+#home-carousel .image {
     flex: 3;
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@
     height: 40vh;
 
 }
-.image div {
+#home-carousel .image div {
     width: 100%;
     height: 100%; 
 
@@ -51,10 +51,10 @@
 }
 
 @media (max-width: 992px) {
-    .main-item { 
+    #home-carousel .main-item { 
         align-items: flex-start;
     }
-    .info {
+    #home-carousel .info {
         max-width: 60%;
         background: linear-gradient(to right, var(--background_color),transparent);
         position: absolute;
@@ -62,12 +62,12 @@
         padding: 2rem;
         height: 100%;
     }
-    .info .icons {
+    #home-carousel .info .icons {
         display: none;
     }
 }
 @media (max-width: 768px) {
-    .info .synopsis {
+    #home-carousel .info .synopsis {
         display: none;
     }
 
