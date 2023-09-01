@@ -1,5 +1,4 @@
 "use strict";
-// import myFetch from "./myFetch";
 import myFetch from "./myFetch.js";
 
 const apiKey = "c04c4d588ea04e1542849e5b03feadc9";
@@ -16,7 +15,8 @@ const options = {
 "https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
 "https://image.tmdb.org/t/p/w500/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
 // ////////////
-const TMDB = {
+export const TMDB = {
+    
         getAllTrendingPage: async function (pageNumb = 1, time = "day") {
             const url = `${basUrl}/trending/all/${time}?api_key=${apiKey}&page=${pageNumb}`;
             return await myFetch(url, options);
@@ -37,7 +37,7 @@ const TMDB = {
 
 
         // 
-        /* More Movie/TVShow Details by id */
+        /* More Movie/TVShow Details by id, getDetailsById(mediaType, id)*/
         getDetailsById: async function (mediaType, id) {
             const url = `${basUrl}/${mediaType}/${id}?api_key=${apiKey}`;
             return await myFetch(url, options);
@@ -107,4 +107,17 @@ const TMDB = {
         //
     },
 };
-export default TMDB
+
+
+export const VideScr = {
+    getNewRelease: async function (contentType,pageNumb = 1) {
+        const url = `https://vidsrc.to/vapi/${contentType}/new/${pageNumb}`;
+        return await myFetch(url, options);
+    },
+    getRecentlyAdded: async function (contentType,pageNumb = 1) {
+        const url = `https://vidsrc.to/vapi/${contentType}/add/${pageNumb}`;
+        return await myFetch(url, options);
+    },
+    
+}
+
