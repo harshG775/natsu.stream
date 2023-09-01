@@ -55,7 +55,9 @@
 #CarouselMini .swiper-slide:hover .info {
     bottom: 0px;
 }
-
+#CarouselMini .swiper-slide:hover .popup  {
+    transform: scale(1);
+}
 .title {
     max-width: 300px;
     overflow:hidden; 
@@ -81,7 +83,10 @@
     display: flex;
     align-items: center;
     gap: .5rem;
+    transform: scale(0.5);
+    transition: transform 0.3s;
 }
+
 
 .popup .add-to-list {
     all: unset;
