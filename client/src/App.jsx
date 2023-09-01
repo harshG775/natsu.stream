@@ -43,7 +43,9 @@ function PageRoutes() {
                 <Route path='/search' element={<SearchPage />} />
                 <Route path='search/q/:query' element={<SearchPage/>} />
                 <Route path='search/q/' element={<SearchPage/>} />
-                <Route path='overview/:content/:id' element={<Content />} />
+
+                <Route path='/:content/:id' element={<Content />} />
+                <Route path='/:content/:id' element={<Content />} />
                 {/*  */}
                 <Route path='*' element={<ErrorPage />} />
             </Routes>

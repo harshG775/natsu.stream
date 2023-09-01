@@ -1,16 +1,16 @@
-import { useEffect } from "react";
+import {useState, useEffect } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import "./carouselMini.css";
-import { VideScr } from "../../../modules/fetching";
+import { TMDB } from "../../../modules/fetching";
 
 export default function CarouselMini() {
-    // const [newRelease, setNewRelease] = useState([]);
+    const [nowPlaying, setNowPlaying] = useState();
     useEffect(() => {
-        VideScr.getNewRelease("tv").then(data=>{
-            console.log(data)
+        TMDB.movie.getNowPlayingPage().then(resp=>{
+            setNowPlaying(resp)
         })
     }, []);
     return (
@@ -36,62 +36,40 @@ export default function CarouselMini() {
                 onSlideChange={() => console.log("slide change")}
                 onSwiper={(swiper) => console.log(swiper)}
             >
-                <SwiperSlide>
-                    <Item />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Item />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Item />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Item />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Item />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Item />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Item />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Item />
-                </SwiperSlide>
+                    
+                    {nowPlaying?.results.map((e,i)=>(
+                        <SwiperSlide key={i}>
+                            <Item {...e} contentType={"movie"}/>
+                        </SwiperSlide>
+                    ))}
             </Swiper>
         </div>
     );
 }
 
-function Item() {
-    const prop = {
-        id: "68528",
-        contentType: "movie",
-    };
+function Item(prop) {
+    console.log(prop)
     return (
         <>
             <div
                 className='poster'
                 style={{
-                    backgroundImage:
-                        "url('https://static.bunnycdn.ru/i/cache/images/7/7f/7f2b81ac4c26647375f9c797876254db.jpg-w1024')",
+                    backgroundImage:`url('https://image.tmdb.org/t/p/w500${prop.poster_path}')`,
                 }}
             ></div>
             <div className='info'>
                 <a
-                    href={`../overview/${prop.contentType}/${prop.id}`}
                     className='title'
+                    href={`../overview/${prop.contentType}/${prop.id}`}
                 >
-                    TITLE
+                    {prop.title?prop.title:prop.original_title}
                 </a>
                 <div className='metadata'>
                     <div className='begin'>
                         <span className='dot'>
-                            <i className='bi bi-star-fill'></i> 6.1
+                            <i className="fa-solid fa-star" style={{color:"#ffe568"}} ></i> {prop.vote_average}
                         </span>
-                        <span className='dot'>2023</span>
+                        <span className='dot'>{prop.release_date}</span>
                         <span className='dot'>103 min</span>
                     </div>
                     <div className='stop'>
@@ -99,16 +77,11 @@ function Item() {
                         <span className='rating'>PG-13</span>
                     </div>
                 </div>
-                <div className='action d-flex'>
-                    <div className='watch-now'>
-                        <a href={`../overview/${prop.contentType}/${prop.id}`}>
-                            Watch Now
-                        </a>
-                    </div>
-                    <div className='drop-pup' data-id='68528'>
-                        <button className='dropdown'>Add To List</button>
-                        <div className='dropdown-menu folders'></div>
-                    </div>
+                <div className='popup'>
+                    <a className='watch-now' href={`../${prop.contentType}/${prop.id}`}>
+                        Watch Now
+                    </a>
+                    <button className='add-to-list'>Add To List</button>
                 </div>
             </div>
         </>
