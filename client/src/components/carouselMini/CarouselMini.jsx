@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
 
 import "./carouselMini.css";
@@ -61,9 +64,9 @@ function Item(prop) {
             </style>
             <div className={`poster poster${id}`}></div>
             <div className='info'>
-                <a className='title' href={`../${contentType}/${id}`}>
+                <Link className='title' to={`../${contentType}/${id}`}>
                     {title ? title : name}
-                </a>
+                </Link>
                 <div className='metadata'>
                     <div className='begin'>
                         <span className='dot'>
@@ -80,9 +83,9 @@ function Item(prop) {
                     </div>
                 </div>
                 <div className='popup'>
-                    <a className='watch-now' href={`../${contentType}/${id}`}>
+                    <Link className='watch-now' to={`../${contentType}/${id}`}>
                         Watch Now
-                    </a>
+                    </Link>
                     <button className='add-to-list'>Add To List</button>
                 </div>
             </div>
