@@ -1,7 +1,7 @@
 /* movies page */
 import { useState, useEffect } from "react";
 import CardItem from "../../components/cardItem/CardItem";
-import Pagination from "../../components/pagination/Pagination";
+import NavPagination from "../../components/navPagination/NavPagination";
 import "./movies.css";
 import { TMDB } from "../../../modules/fetching";
 
@@ -30,20 +30,22 @@ export default function MoviesPage() {
 
 function Trending() {
     const [trending, setTrending] = useState([]);
+    const [pageNumber,setPageNumber] = useState(1)
     useEffect(() => {
-        TMDB.getTrendingPage("movie", 1, "day").then((data) =>
+        TMDB.getTrendingPage("movie", pageNumber, "day").then((data) =>
             setTrending(data)
         );
-    }, []);
+    }, [pageNumber]);
     return (
         <section>
-            <h6>Trending</h6>
+
+            <h1>Trending</h1>
             <div className='item-container'>
                 {trending.results?.map((e, key) => (
                     <CardItem {...e} contentType={"movie"} key={key} />
-                ))}
+                    ))}
             </div>
-            <Pagination/>
+            <NavPagination pageNumber={pageNumber} setPageNumber={setPageNumber} totalPages={trending?.total_pages} />
         </section>
     );
 }

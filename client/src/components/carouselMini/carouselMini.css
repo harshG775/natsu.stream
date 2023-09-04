@@ -1,5 +1,5 @@
 #CarouselMini {
-    background-image: url("../../../public/carousel-mini.svg");
+    background-image: url("/carousel-mini.svg");
 }
 #CarouselMini .swiper {
     width: 100%;

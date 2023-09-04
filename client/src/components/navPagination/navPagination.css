@@ -1,0 +1,50 @@
+.un-selectable {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari, Chrome, Opera, Samsung */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Edge, IE */
+    user-select: none;
+    /* Modern browsers */
+}
+
+.pagination ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pagination ul .previous,
+.pagination ul .next {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.pagination ul .previous:hover,
+.pagination ul .next:hover {
+    color: var(--primary_color);
+}
+
+.page-count {
+    display: flex;
+    gap: 0.25rem;
+    background-color: var(--background_color);
+    padding: 0 0.75rem;
+}
+.active {
+    color: var(--primary_color);
+    background-color: var(--background_color);
+}
+
+/* .pagination ul .numbers span {
+    user-select: none;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: var(--background_color_lighter);
+    outline: 1px solid var(--background_color);
+} */

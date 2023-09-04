@@ -46,7 +46,6 @@ function Item(prop) {
         backdrop_path,poster_path,contentType,id,title,first_air_date,
         name,vote_average,release_date,adult,
     } = prop;
-    console.log(prop)
     return (
         <>
             <style>
