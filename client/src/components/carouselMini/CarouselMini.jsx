@@ -63,7 +63,7 @@ function Item(prop) {
             </style>
             <div className={`poster poster${id}`}></div>
             <div className='info'>
-                <Link className='title' to={`../${contentType}/${id}`}>
+                <Link className='title' to={`../${contentType}/about/${id}`}>
                     {title ? title : name}
                 </Link>
                 <div className='metadata'>
@@ -82,7 +82,7 @@ function Item(prop) {
                     </div>
                 </div>
                 <div className='popup'>
-                    <Link className='watch-now' to={`../${contentType}/${id}`}>
+                    <Link className='watch-now' to={`../${contentType}/about/${id}`}>
                         Watch Now
                     </Link>
                     <button className='add-to-list'>Add To List</button>

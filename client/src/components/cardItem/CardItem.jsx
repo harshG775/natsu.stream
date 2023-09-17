@@ -9,7 +9,7 @@ export default function CardItem(prop) {
 
     return (
         <div className='item'>
-            <Link to={`../overview/${contentType}/${id}`}>
+            <Link to={`../${contentType}/about/${id}`}>
                 <img
                     src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
                     alt=''
@@ -17,7 +17,7 @@ export default function CardItem(prop) {
             </Link>
             <div className='meta'>
                 <h5>
-                    <Link to={`../overview/${contentType}/${id}`}>
+                    <Link to={`../${contentType}/about/${id}`}>
                         {title ? title : name}
                     </Link>
                 </h5>

@@ -19,13 +19,13 @@ export default function SideNavBar() {
                         </Link>
                     </li>
                     <li>
-                        <Link to={"/movies"}>
+                        <Link to={"/movie"}>
                             <span><i className='fa-solid fa-film'></i></span>
                             <span>Movie</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to={"/tvshow"}>
+                        <Link to={"/tv"}>
                             <span><i className="fa-solid fa-desktop"></i></span>
                             <span>Tv Show</span>
                         </Link>

@@ -1,10 +1,11 @@
 import "./carouselItem.css"
+import { Link } from "react-router-dom";
 export default function CarouselItem(prop) {
     console.log(prop.backdrop_path)
   return (
         <>
             <div className='info'>
-                <h2 className='title d-title'>{prop?.original_title}:{prop?.title}</h2>
+                <h2 className='title d-title'>{prop?.title}:{prop?.title}</h2>
                 <div className='meta icons'>
                     <i className='rating'>{prop.adult?"18+":""}</i>
                     <i className='quality'>HD</i>
@@ -16,9 +17,9 @@ export default function CarouselItem(prop) {
                     {prop?.overview}
                 </div>
                 <div className='actions'>
-                    <a href='/watch/mushoku-tensei-ii-isekai-ittara-honki-dasu-part-2.prwzx' className='btn play btn-primary' >
+                    <Link to={`${"movie"}/about/${prop.id}`} >
                         <i className='fas fa-play'></i> Play now
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className='image'>
