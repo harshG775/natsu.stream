@@ -1,16 +1,9 @@
-import express from "express";
-import path from "path";
-import router from "./routes/router.js"
+import env from "dotenv";
+env.config({path:`${rootDir}/config.env`})
 
-const app = express();
+import app from "./app.js";
+import rootDir from "./modules/rootDir.js"
 
-import __dirname from "./modules/__dirname.js";
-
-/* for serving react app after npm run build */
-app.use(express.static(path.join(__dirname, '../public')));
-
-app.use("/",router)
-app.use("/api",router)
 
 
 const PORT = process.env.PORT || 3030;

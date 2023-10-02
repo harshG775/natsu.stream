@@ -1,5 +1,6 @@
 "use strict";
 import myFetch from "./myFetch.js";
+// const apiKey = process.env.API_KEY
 
 const apiKey = "c04c4d588ea04e1542849e5b03feadc9";
 const basUrl = "https://api.themoviedb.org/3";
@@ -11,11 +12,7 @@ const options = {
             "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMDRjNGQ1ODhlYTA0ZTE1NDI4NDllNWIwM2ZlYWRjOSIsInN1YiI6IjYyMzg2NDQ2OWVlMGVmMDA0NmRhNTA0NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dA1jUv8T1T3u9rACdp3RAvs7FnAWVYM7HTDbIvqEmqg",
     },
 };
-"https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
-"https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
-"https://image.tmdb.org/t/p/w500/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
-// ////////////
-export const TMDB = {
+const TMDB = {
     
         getAllTrendingPage: async function (pageNumb = 1, time = "day") {
             const url = `${basUrl}/trending/all/${time}?api_key=${apiKey}&page=${pageNumb}`;
@@ -107,17 +104,21 @@ export const TMDB = {
         //
     },
 };
+export default TMDB
 
-
-export const VideScr = {
-    getNewRelease: async function (contentType,pageNumb = 1) {
-        const url = `https://vidsrc.to/vapi/${contentType}/new/${pageNumb}`;
-        return await myFetch(url, options);
-    },
-    getRecentlyAdded: async function (contentType,pageNumb = 1) {
-        const url = `https://vidsrc.to/vapi/${contentType}/add/${pageNumb}`;
-        return await myFetch(url, options);
-    },
+// "https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
+// "https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
+// "https://image.tmdb.org/t/p/w500/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
+// ////////////
+// const VideScr = {
+//     getNewRelease: async function (contentType,pageNumb = 1) {
+//         const url = `https://vidsrc.to/vapi/${contentType}/new/${pageNumb}`;
+//         return await myFetch(url, options);
+//     },
+//     getRecentlyAdded: async function (contentType,pageNumb = 1) {
+//         const url = `https://vidsrc.to/vapi/${contentType}/add/${pageNumb}`;
+//         return await myFetch(url, options);
+//     },
     
-}
+// }
 

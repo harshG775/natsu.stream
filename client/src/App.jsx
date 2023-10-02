@@ -13,7 +13,7 @@ import AboutPage from "./pages/about/About";
 
 import TopNavBar from "./components/navBar/topbar/TopBar";
 import SideNavBar from "./components/navBar/sidebar/SideBar";
-import Footer from "./components/footer/Footer";
+// import Footer from "./components/footer/Footer";
 import "./App.css";
 
 export default function App() {
@@ -23,7 +23,7 @@ export default function App() {
             <MainBody>
                 <TopNavBar/>
                 <PageRoutes />
-                <Footer />
+                {/* <Footer /> */}
             </MainBody>
             
         </BrowserRouter>

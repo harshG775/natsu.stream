@@ -1,0 +1,325 @@
+:root {
+    --primary_color: #FF5733;           /* Fire Red */
+    --background_color: #141519;        /* Dark Gray Background */
+    --background_color_lighter: #202128;
+    --text_color: #CCCCCC;              /* Light Gray Text */
+    --accent_color: #FF8C66;            /* Subtle Gradient Accent */
+    --complementary_color: #4CAF50;     /* Complementary Green */
+    --neon_color: #00BFFF;              /* Neon Blue */
+    --secondary_color: #303F9F;         /* Secondary Blue */
+
+    --initial_font: 'Roboto', sans-serif;
+    --global_font: 'Roboto', sans-serif;
+    --header_font: 'Montserrat', sans-serif;
+    --main_content_font: 'Lato', sans-serif;
+    --accent_font: 'Poppins', sans-serif;
+    --emphasis_font: 'Exo', sans-serif;
+
+    color-scheme: dark;
+    background-color: var(--background_color);
+    color: var(--text_color);
+    
+}
+
+:root {
+    font-family: sans-serif;
+    color-scheme: light dark;
+    color: #eee;
+    background-color: #222;
+}
+ul {
+    list-style: none;
+}
+/* / */
+
+section.info,
+section.streaming,
+section.seasons,
+section.comments {
+    display: flex;
+    gap: 1rem;
+}
+section.info,
+section.streaming > div,
+section.seasons > div,
+section.comments > div {
+    flex: 2;
+}
+
+section.info,
+section.streaming > div:nth-child(2),
+section.seasons > div:nth-child(2),
+section.comments > div:nth-child(2) {
+    flex: 1;
+}
+@media (max-width: 992px) {
+    section.info,
+    section.streaming ,
+    section.seasons ,
+    section.comments  {
+        flex-direction: column;
+    }
+}
+.section-title {
+    background-color: #111;
+    margin: 4rem 0 2rem;
+}
+.section-title h5{
+    line-height: 4rem;
+    padding: 0 1rem;
+}
+
+
+/* .about */
+.about {
+}
+/* ////////////// */
+.about .backdrop {
+    height: 450px;
+    background-size: cover;
+    background-position: right center;
+    box-shadow: inset 0px -50px 30px -20px #11111181;
+}
+.backdrop .backdrop-inner {
+
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: flex-end;
+    
+    position: relative;
+    top: 6rem;
+}
+.backdrop-inner .poster {
+    width: 280px;
+}
+
+.backdrop-inner .action-buttons {
+    /* flex: 1 0 auto; */
+    margin-left: auto;
+    display: flex;
+    margin-top: auto;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.action-buttons span {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #333;
+    color: #eee;
+    flex-shrink: 0;
+    border: 1px solid #eee;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.action-buttons span:nth-child(1) {
+    background-color: #eee;
+    color: #ff3327;
+
+}
+.action-buttons span:hover {
+    background-color: #eee;
+    color: #333;
+}
+.action-buttons span:nth-child(1):hover {
+    background-color: #ff3327;
+    color: #eee;
+}
+
+@media (max-width: 992px) {
+    .backdrop .backdrop-inner {
+        align-items: center;
+        flex-direction: column;
+    }
+    .backdrop-inner .poster {
+        transition: margin 0.3s;
+        margin-bottom: 1rem;
+    }
+    .backdrop-inner .action-buttons {
+        margin-left: unset;
+    }
+}
+
+/* /////////////////////////////// section */
+ .info {
+    margin-top:8rem;
+
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.info .left{
+    flex: 2;
+    width: clamp(10%,1rem);
+}
+.left .title h1{
+    padding: 1rem 0;
+}
+.left .overview p{
+    font-size: 1.2rem;
+    /* max-width: 35rem;  */
+    color: hwb(0 93% 7% / 0.850);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    justify-content: center;
+}
+.left .overview > div {
+    text-align: end;
+    cursor: pointer;
+}
+
+
+
+
+.info .right {
+    border: 2px solid #333;
+    padding: 1rem;
+    border-radius: 1rem;
+    
+    flex: 1;
+}
+.right ul{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-row-gap: 0.5rem;
+    align-items: center;
+    color: rgba(238, 238, 238, 0.70);
+    
+}
+.ratings-container {
+    padding: 2rem 0 0 0;
+}
+.ratings-container .ratings {
+    display: flex;
+    justify-content: space-between;
+}
+.ratings-container .ratings .fa-star{
+    color: rgb(255, 196, 0);
+}
+.ratings-container .rating {
+    margin-top: 0.5rem;
+    background-color: #111;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+}
+.rating .fa-star:hover {
+    cursor: pointer;
+    color: rgb(255, 196, 0);
+}
+
+
+
+
+@media (max-width: 992px) {
+    .about .info {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .left .title h1{
+        text-align: center;
+    }
+    .left .overview p{
+        max-width: unset; 
+    }
+
+
+
+    /*  */
+    section.info,
+    section.streaming,
+    section.seasons,
+    section.comments {
+        padding: 0 1rem;
+    }
+}
+/* /////////////////////////////// section */
+section.streaming {
+    
+}
+.player-container iframe{
+    /* all: unset !important; */
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 0.5rem;
+}
+.player-container .airing-time {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: #333;
+    border-radius:0.5rem;
+}
+.player-container {
+
+}
+.episodes-container .episodes{
+
+    --sb-track-color: #122;
+    --sb-thumb-color: #ff3327;
+    --sb-size: 8px;
+
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    overflow-y: scroll;
+    max-height: 15rem;
+
+    padding: 5px 0;
+    margin: 1rem 0;
+    border: 10px solid #111;
+    border-radius: 5px;
+}
+
+.episodes::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+.episodes::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 1px;
+}
+
+.episodes::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 1px;
+}
+
+.episode {
+    background-color: #333;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.episode:nth-child(even) {
+    background-color: #222;
+}
+.episode:hover {
+    background-color: #111;
+}
+
+
+.recommended {
+
+}
+
+
+
+
+
+/* /////////////////////////////// section */
+section.seasons {
+    
+}
+/* /////////////////////////////// section */
+section.comments {
+
+}

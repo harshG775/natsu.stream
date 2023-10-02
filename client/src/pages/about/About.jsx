@@ -11,19 +11,46 @@ export default function AboutPage() {
         TMDB.getDetailsById(urlParams.contentType,urlParams.id)
         .then(d=>setApiData(d))
     },[urlParams])
-    console.log(apiData?.name)
+    console.log(apiData)
 	return (
-		<main id="movies" className="maxContainer">
-			<section>
-                <img style={{width:"100%"}} src={`https://image.tmdb.org/t/p/original/${apiData?.backdrop_path}`} alt="" />
-                <div className="about">
-                    <img style={{width:"50%"}} src={`https://image.tmdb.org/t/p/original/${apiData?.poster_path}`} alt="" />
-                    <h1>Title: {apiData?.name?apiData?.name:apiData?.title}</h1>
+		<main id="about">
+            <div className="backdrop"
+                style={{
+                                    backgroundImage:`
+                                    linear-gradient(to bottom,#14151990,#14151990), 
+                                    url(https://image.tmdb.org/t/p/original/${apiData?.backdrop_path})`,
+                }}
+            >
+                <div className="info maxContainer">
+                    <img className="poster" src={`https://image.tmdb.org/t/p/w500/${apiData?.poster_path}`} alt="" />
+                    <div>
+                        <button>watch</button>
+                        <button>add</button>
+                    </div>
+                    <ul>
+                        <li>Score:{apiData?.vote_average}</li>
+                        <li>Rank:</li>
+                        <li>Season:{apiData?.number_of_seasons}</li>
+                        <li>Episodes:{apiData?.number_of_episode}</li>
+                        <li>Genres:{apiData?.genres}</li>
+                        <li>Released:{apiData?.first_air_date}</li>
+                        {/*<li>Rating:{apiData?.}</li>
+                        <li>Duration:{apiData?.}</li>
+                        <li>Status:{apiData?.}</li>
+                        <li>Broadcast:{apiData?.}</li>
+                        <li>Source:{apiData?.}</li>
+                        <li>Studios:{apiData?.}</li> */}
+                    </ul>
+                    <h1>{apiData?.name?apiData?.name:apiData?.title}</h1>
                     <h6>original Title: {apiData?.original_title}</h6>
                     <p>{apiData?.overview}</p>
                     <div>Release Date {apiData?.release_date}</div>
                     <div>RunTime:<i>{apiData?.runtime} min</i> </div>
                 </div>
+            </div>
+
+            <section>
+                
             </section>
 		</main>
 	);
