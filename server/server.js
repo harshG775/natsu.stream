@@ -1,8 +1,7 @@
-import env from "dotenv";
-env.config({path:`${rootDir}/config.env`})
-
-import app from "./app.js";
 import rootDir from "./modules/rootDir.js"
+import env from "dotenv";
+env.config({path:`${rootDir}/config.env`, debug: true});
+import app from "./app.js";
 
 
 

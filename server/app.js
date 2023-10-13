@@ -8,8 +8,8 @@ import movieRoutes from "./routes/TMDB/movieRoutes.js"
 const app = Express();
 
 app.use(morgan("dev"))
-app.use(Express.static(rootDir+"/public"))
-console.log(process.env.API_KEY)
+app.use(Express.static(`${rootDir}/public`))
+
 
 
 app.use("/api/v1/movie",movieRoutes)

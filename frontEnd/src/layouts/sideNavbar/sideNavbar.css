@@ -1,0 +1,124 @@
+/* side-navbar */
+
+.side-navbar {
+    z-index: 10;
+    position: fixed;
+    inset: 0 auto 0 0;
+    display: flex;
+    background: var(--bg_clr2);
+    box-shadow: 0 0 2px 0 var(--bg_clr5);
+
+    pointer-events: all;
+    overflow: hidden;
+
+    position: absolute;
+    height: 100%;
+
+}
+
+.side-navbar .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-size: 1.3rem;
+    height: 100%;
+}
+
+.side-navbar .nav-links li {
+    padding: 0.2rem 0.6rem;
+}
+.side-navbar .nav-links a {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--bg_clr3);
+    color: var(--txt_clr4);
+    
+    /* border-top: 1px solid var(--bg_clr5);
+    border-bottom: 1px solid var(--bg_clr5); */
+    border-radius: 20px 20px 10px 10px;
+
+    transition: background-color 0.2s;
+}
+.side-navbar .nav-links a:hover {
+    background-color: var(--primary_clr);
+    color: var(--txt_clr1);
+}
+.side-navbar .nav-links a i {
+    display: inline-block;
+    width: 3rem;
+}
+
+/*  */
+@media (min-width: 577px) {
+    .side-navbar {
+        width: 4rem;
+        /* padding-top: 3rem; */
+        transition: width 0.2s;
+    }
+    .side-navbar:hover {
+        width: 11.25rem;
+    }
+
+    
+    
+    .side-navbar .nav-links .nav-logo a {
+        all: unset;
+        display: block;
+        padding: 1rem 0;
+    }
+    .side-navbar .nav-links .nav-logo a:hover {
+        background-color: var(--bg_clr2);
+    }
+    .nav-logo {
+        all: unset;
+        background-color: var(--bg_clr2);
+        box-shadow: 0 0 5px 0 var(--bg_clr5);
+    }
+    .nav-logo span:nth-child(1){
+        color: var(--primary_clr);
+        background-color: var(--bg_clr2);
+        position:absolute;
+        top: 0;
+        right: -1rem;
+        font-size: 1.5rem;
+        padding: 0.8rem 1rem;
+    }
+    .side-navbar .nav-links li:nth-last-child(1) {
+        margin-top: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+/*  */
+
+@media (max-width: 576px) {
+
+    .side-navbar {
+        overflow: unset;
+        padding-top: unset;
+        height: unset;
+
+        position: fixed;
+        inset: auto 0 0 0;
+    }
+
+    .side-navbar .nav-links {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0.3rem 10vw 0.3rem;
+        align-items: center;
+    }
+    .side-navbar .nav-links a span:nth-child(2) {
+        display: none;
+    }
+    .side-navbar .nav-links a i {
+        width: unset;
+    }
+    .nav-logo {
+        display: none;
+    }
+}

@@ -1,8 +1,11 @@
 import Express from "express";
-const router = Express.Router()
 import movieController from "../../controllers/movieController.js";
-router.route("/")
-    .get(movieController.getAllTrendingPage)
+const router = Express.Router()
+
+router.route("/trending/all/:page/:time")
+    .get(movieController.trendingAll)
+router.route("/trending/:page/:time")
+    .get(movieController.trending)
 
 
 export default router
