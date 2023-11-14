@@ -5,8 +5,8 @@ import { Actions } from "../../store/DBReducer";
 export default function Home() {
 	const [state, dispatch] = useContext(DBContext);
 	return (
-		<>
+		<main>
             <button onClick={()=>dispatch({type:Actions.INCREMENT,payload:state.count+1})}>add {state.count}</button>
-		</>
+		</main>
 	);
 }

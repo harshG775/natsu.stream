@@ -10,10 +10,6 @@
 
     pointer-events: all;
     overflow: hidden;
-
-    position: absolute;
-    height: 100%;
-
 }
 
 .side-navbar .nav-links {
@@ -45,6 +41,11 @@
     background-color: var(--primary_clr);
     color: var(--txt_clr1);
 }
+#active {
+    background-color: var(--primary_clr);
+    color: var(--txt_clr1);
+}
+
 .side-navbar .nav-links a i {
     display: inline-block;
     width: 3rem;

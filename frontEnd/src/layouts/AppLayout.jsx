@@ -1,11 +1,12 @@
-import { Suspense, useEffect } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import "./AppLayout.css"
+import { Suspense, useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { lazy } from "react";
+import SideNavbar from "../components/sideNavbar/SideNavbar";
+import TopNavbar from "../pageLayouts/topNavbar/TopNavbar";
+import Footer from "../pageLayouts/footer/Footer";
 
-function LoadingScreen() {
-    return (
-        <div>loading...</div>
-    );
-}
+const LoadingScreen = lazy(() => import("../pageLayouts/loading/LoadingScreen"));
 
 export default function AppLayout() {
     const location = useLocation();
@@ -14,16 +15,20 @@ export default function AppLayout() {
         window.scroll({
             top: 0,
             left: 0,
-            behavior: 'smooth',
+            behavior: "smooth",
         });
     }, [location]);
 
     return (
         <>
-        <h1>hhhh</h1>
-            <Suspense fallback={<LoadingScreen />}>
-                <Outlet />
-            </Suspense>
+            <SideNavbar/>
+            <div className="page">
+                <TopNavbar/>
+                <Suspense fallback={<LoadingScreen />}>
+                    <Outlet />
+                </Suspense>
+                <Footer/>
+            </div>
         </>
     );
 }

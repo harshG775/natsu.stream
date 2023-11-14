@@ -1,0 +1,14 @@
+.page{
+    background-color: var(--bg_clr2);
+    color: var(--txt_clr1);
+    overflow-y: scroll;
+
+    height: 100vh;
+    padding-left: 4rem;
+}
+@media (max-width: 576px) {
+    .page{    
+        height: calc(100vh - 4rem);
+        padding-left: 0rem;
+    }
+}
