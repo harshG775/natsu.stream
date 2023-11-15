@@ -1,41 +1,40 @@
-import { useState, useEffect } from "react";
-import { Icon } from "@iconify/react";
+import "./ThemeToggle.css"
+import {Icon} from "@iconify/react"
+import { useState,useEffect } from "react";
 export default function ThemeToggle() {
-	const [theme, setTheme] = useState(() => {
+	const elements = document.querySelectorAll('[data="theme"]');
+
+    const [theme, setTheme] = useState(() => {
 		const savedTheme = localStorage.getItem("theme");
 		return savedTheme || "light";
 	});
 
 	useEffect(() => {
 		if (theme === "dark") {
-			document.body.classList.add("dark");
+			elements.forEach(element => {
+                element.classList.remove("dark-mode");
+                element.classList.add("light-mode");
+            });
 		} else {
-			document.body.classList.remove("dark");
+			elements.forEach(element => {
+                element.classList.add("dark-mode");
+                element.classList.remove("light-mode");
+            });
 		}
-	}, [theme]);
+	}, [elements,theme]);
 
 	const toggleTheme = () => {
 		const newTheme = theme === "light" ? "dark" : "light";
 		setTheme(newTheme);
 		localStorage.setItem("theme", newTheme);
 	};
-
-	return (
-		<div className=' fixed bottom-24 right-8'>
-			<button
-				onClick={toggleTheme}
-				className={`
-                dark:-bg--clr-neutral-100
-                dark:-text--clr-neutral-900
-
-                -bg--clr-neutral-900
-                -text--clr-neutral-100
-                rounded-full
-                p-2
-                font-bold
-                `}>
-				<Icon className=' w-6 h-6' icon='line-md:light-dark-loop' />
+    return(
+        <div className="theme-toggle-container">
+			<button data="theme" onClick={toggleTheme}>
+                <Icon icon={theme==="dark"?"line-md:moon-rising-alt-loop":""}/>
+                <Icon icon={theme==="light"?"line-md:sun-rising-loop":""}/>
 			</button>
 		</div>
-	);
+    )
+    
 }

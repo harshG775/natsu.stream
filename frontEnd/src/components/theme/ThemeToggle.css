@@ -1,0 +1,14 @@
+.theme-toggle-container button {
+    position: fixed;
+    bottom: 4.5rem;
+    right: 1.5rem;
+    font-weight: bold;
+    border-radius: 9999px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    transition-property: color, background-color;
+    background-color: var(--clr-neutral-800);
+    color: var(--clr-neutral-100);
+}

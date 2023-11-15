@@ -1,41 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-:root {
-    --primary_clr: #ff5833;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-    --bg_clr1: #111;
-    --bg_clr2: #222;
-    --bg_clr3: #333;
-    --bg_clr4: #444;
-    --bg_clr5: #555;
-    --txt_clr1: #fff;
-    --txt_clr2: #eee;
-    --txt_clr3: #ddd;
-    --txt_clr4: #ccc;
-    --txt_clr4: #bbb;
-    --txt_clr5: #aaa;
+:root {
+    --clr-primary-50: #fff7ed;
+    --clr-primary-100: #ffedd5;
+    --clr-primary-200: #fed7aa;
+    --clr-primary-300: #fdba74;
+    --clr-primary-400: #fb923c;
+    --clr-primary-500: #f97316;
+    --clr-primary-600: #ea580c;
+    --clr-primary-700: #c2410c;
+    --clr-primary-800: #9a3412;
+    --clr-primary-900: #7c2d12;
+    --clr-primary-950: #431407;
+
+    --clr-secondary-50: #f5f3ff;
+    --clr-secondary-100: #ede9fe;
+    --clr-secondary-200: #ddd6fe;
+    --clr-secondary-300: #c4b5fd;
+    --clr-secondary-400: #a78bfa;
+    --clr-secondary-500: #8b5cf6;
+    --clr-secondary-600: #7c3aed;
+    --clr-secondary-700: #6d28d9;
+    --clr-secondary-800: #5b21b6;
+    --clr-secondary-900: #4c1d95;
+    --clr-secondary-950: #2e1065;
 
     --global_font: 'Roboto', sans-serif;
     --page_content_font: 'Lato', sans-serif;
     --emphasis_font: 'Exo 2', sans-serif;
 
-    color-scheme: dark;
-    background-color: var(--bg_clr2);
-    color: var(--txt_clr1);
     font-family: var(--global_font);
 }
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-a {
-    text-decoration: none;
-}
-ul {
-    list-style-type: none;
-}
+.light-mode {
+    /* light-mode */
+    --clr-neutral-50: #fafafa;
+    --clr-neutral-100: #f5f5f5;
+    --clr-neutral-200: #e5e5e5;
+    --clr-neutral-300: #d4d4d4;
+    --clr-neutral-400: #a3a3a3;
+    --clr-neutral-500: #737373;
+    --clr-neutral-600: #525252;
+    --clr-neutral-700: #404040;
+    --clr-neutral-800: #262626;
+    --clr-neutral-900: #171717;
+    --clr-neutral-950: #0a0a0a;
 
-#root {
-    overflow: hidden;
+    color-scheme: light;
+}
+.dark-mode {
+    /* dark-mode */
+    --clr-neutral-50: #0a0a0a;
+    --clr-neutral-100: #171717;
+    --clr-neutral-200: #262626;
+    --clr-neutral-300: #404040;
+    --clr-neutral-400: #525252;
+    --clr-neutral-500: #737373;
+    --clr-neutral-600: #a3a3a3;
+    --clr-neutral-700: #d4d4d4;
+    --clr-neutral-800: #e5e5e5;
+    --clr-neutral-900: #f5f5f5;
+    --clr-neutral-950: #fafafa;
+
+    color-scheme: dark;
 }
