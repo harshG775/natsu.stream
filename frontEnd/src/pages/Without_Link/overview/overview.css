@@ -1,0 +1,113 @@
+
+/* / */
+
+section.info,
+section.streaming,
+section.seasons,
+section.comments {
+    display: flex;
+    gap: 1rem;
+}
+section.info,
+section.streaming > div,
+section.seasons > div,
+section.comments > div {
+    flex: 2;
+}
+
+section.info,
+section.streaming > div:nth-child(2),
+section.seasons > div:nth-child(2),
+section.comments > div:nth-child(2) {
+    flex: 1;
+}
+@media (max-width: 992px) {
+    section.info,
+    section.streaming ,
+    section.seasons ,
+    section.comments  {
+        flex-direction: column;
+    }
+}
+.section-title {
+    background-color: #111;
+    margin: 4rem 0 2rem;
+}
+.section-title h5{
+    line-height: 4rem;
+    padding: 0 1rem;
+}
+
+
+/* .overview */
+.overview {
+}
+/* ////////////// */
+.overview .backdrop {
+    height: 450px;
+    background-size: cover;
+    background-position: right center;
+    box-shadow: inset 0px -50px 30px -20px #11111181;
+}
+.backdrop .backdrop-inner {
+
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: flex-end;
+    
+    position: relative;
+    top: 6rem;
+}
+.backdrop-inner .poster {
+    width: 280px;
+}
+
+.backdrop-inner .action-buttons {
+    /* flex: 1 0 auto; */
+    margin-left: auto;
+    display: flex;
+    margin-top: auto;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.action-buttons span {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #333;
+    color: #eee;
+    flex-shrink: 0;
+    border: 1px solid #eee;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.action-buttons span:nth-child(1) {
+    background-color: #eee;
+    color: #ff3327;
+
+}
+.action-buttons span:hover {
+    background-color: #eee;
+    color: #333;
+}
+.action-buttons span:nth-child(1):hover {
+    background-color: #ff3327;
+    color: #eee;
+}
+
+@media (max-width: 992px) {
+    .backdrop .backdrop-inner {
+        align-items: center;
+        flex-direction: column;
+    }
+    .backdrop-inner .poster {
+        transition: margin 0.3s;
+        margin-bottom: 1rem;
+    }
+    .backdrop-inner .action-buttons {
+        margin-left: unset;
+    }
+}

@@ -1,0 +1,36 @@
+.H1 {
+    margin-top: 3.25rem;
+    color: var(--clr-neutral-800);
+}
+.H2 {
+    margin-top: 3rem;
+    color: var(--clr-neutral-800);
+}
+.H3 {
+    margin-top: 2.75rem;
+    color: var(--clr-neutral-800);
+}
+.H4 {
+    margin-top: 2.5rem;
+    color: var(--clr-neutral-800);
+}
+.H5 {
+    margin-top: 2.25rem;
+    color: var(--clr-neutral-800);
+}
+.H6 {
+    margin-top: 2rem;
+    color: var(--clr-neutral-800);
+}
+
+
+
+@media (max-width: 1400px) {}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {}
