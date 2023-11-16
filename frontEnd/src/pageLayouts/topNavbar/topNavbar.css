@@ -1,14 +1,15 @@
 .top-navbar {
     background-color: var(--clr-neutral-50);
     color: var(--clr-neutral-800);
-    box-shadow: 1px 3px 5px var(--clr-neutral-200);
+    /* box-shadow: 1px 3px 5px var(--clr-neutral-200); */
     position: sticky;
     top: 0;
+    z-index: 100;
     
 }
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .top-navbar {
-        background-color: var(--clr-clear-600);
+        background-color: var(--clr-clear-200);
         -webkit-backdrop-filter: blur(0.2rem);
         backdrop-filter: blur(0.2rem);
     }

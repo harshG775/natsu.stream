@@ -1,8 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AppLayout from './layouts/AppLayout';
-// import { lazy } from 'react';
-import Home from "./pages/With_Link/Home/Home";
+import { lazy } from 'react';
+
+import Home from "./pages/With_Link/Home/Home"
 import PageNotFound from './pages/Without_Link/PageNotFound';
+const Overview = lazy(() => import("./pages/Without_Link/overview/Overview"));
 
 export default function AppRoutes() {
 	const router = createBrowserRouter([
@@ -10,6 +12,7 @@ export default function AppRoutes() {
 			path:"/",
 			element:<AppLayout/>,
 			children:[
+				// without Link
 				{
 					index:true,
 					element:<Home />
@@ -31,6 +34,11 @@ export default function AppRoutes() {
 					element:<Home />
 				},
 
+				// without Link
+				{
+					path:"/:media_type/about/:id",
+					element:<Overview />
+				},
 			]
 		},
 		{
