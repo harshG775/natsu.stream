@@ -11,15 +11,12 @@ export default function ThemeToggle() {
 
 	useEffect(() => {
 		if (theme === "dark") {
-			elements.forEach(element => {
-                element.classList.remove("dark-mode");
-                element.classList.add("light-mode");
-            });
+			elements[0].classList.remove("dark-mode");
+			elements[0].classList.add("light-mode");
+			
 		} else {
-			elements.forEach(element => {
-                element.classList.add("dark-mode");
-                element.classList.remove("light-mode");
-            });
+                elements[0].classList.add("dark-mode");
+                elements[0].classList.remove("light-mode");
 		}
 	}, [elements,theme]);
 
@@ -30,7 +27,7 @@ export default function ThemeToggle() {
 	};
     return(
         <div className="theme-toggle-container">
-			<button data="theme" onClick={toggleTheme}>
+			<button onClick={toggleTheme}>
                 <Icon icon={theme==="dark"?"line-md:moon-rising-alt-loop":""}/>
                 <Icon icon={theme==="light"?"line-md:sun-rising-loop":""}/>
 			</button>

@@ -1,0 +1,40 @@
+form.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    position: relative;
+}
+.search-container input {
+    all: unset;
+    border: 2px solid var(--clr-neutral-500);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+
+    width: 25%;
+    padding-right: 2rem;
+    transition: width 0.3s;
+}
+.search-container input:focus {
+    width: 80%;
+}
+.search-container button {
+    border: unset;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--clr-neutral-900);
+    position: absolute;
+    padding-right: 0.5rem;
+    height: 100%;
+
+
+}
+.search-container button svg {
+    border-left: 2px solid var(--clr-neutral-500);
+    font-size: 1.5rem;
+    padding: 0 0 0 0.4rem;
+    height: 100%;
+    transition: color 0.25s;
+}
+.search-container button:hover {
+    color: var(--clr-primary-400);
+}
