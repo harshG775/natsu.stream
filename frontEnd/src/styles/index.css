@@ -32,9 +32,55 @@
     --page_content_font: 'Lato', sans-serif;
     --emphasis_font: 'Exo 2', sans-serif;
 
-    font-family: var(--global_font);
-}
+    --xxl: 1400px;
+    --xl: 1200px;
+    --lg: 992px;
+    --md: 768px;
+    --sm: 576px;
 
+    font-family: var(--global_font);
+
+    
+    --text-xs: 0.75rem; /* 12px */
+    --line-height-xs: 1rem; /* 16px */
+  
+    --text-sm: 0.875rem; /* 14px */
+    --line-height-sm: 1.25rem; /* 20px */
+  
+    --text-base: 1rem; /* 16px */
+    --line-height-base: 1.5rem; /* 24px */
+  
+    --text-lg: 1.125rem; /* 18px */
+    --line-height-lg: 1.75rem; /* 28px */
+  
+    --text-xl: 1.25rem; /* 20px */
+    --line-height-xl: 1.75rem; /* 28px */
+  
+    --text-2xl: 1.5rem; /* 24px */
+    --line-height-2xl: 2rem; /* 32px */
+  
+    --text-3xl: 1.875rem; /* 30px */
+    --line-height-3xl: 2.25rem; /* 36px */
+  
+    --text-4xl: 2.25rem; /* 36px */
+    --line-height-4xl: 2.5rem; /* 40px */
+  
+    --text-5xl: 3rem; /* 48px */
+    --line-height-5xl: 1;
+  
+    --text-6xl: 3.75rem; /* 60px */
+    --line-height-6xl: 1;
+  
+    --text-7xl: 4.5rem; /* 72px */
+    --line-height-7xl: 1;
+  
+    --text-8xl: 6rem; /* 96px */
+    --line-height-8xl: 1;
+  
+    --text-9xl: 8rem; /* 128px */
+    --line-height-9xl: 1;
+}
+  
 .light-mode {
     /* light-mode */
     --clr-neutral-50: #fafafa;
@@ -48,6 +94,19 @@
     --clr-neutral-800: #262626;
     --clr-neutral-900: #171717;
     --clr-neutral-950: #0a0a0a;
+
+    /* transparent */
+    --clr-clear-50: rgba(250, 250, 250, 1);
+    --clr-clear-100: rgba(250, 250, 250, 0.9);
+    --clr-clear-200: rgba(250, 250, 250, 0.8);
+    --clr-clear-300: rgba(250, 250, 250, 0.7);
+    --clr-clear-400: rgba(250, 250, 250, 0.6);
+    --clr-clear-500: rgba(250, 250, 250, 0.5);
+    --clr-clear-600: rgba(250, 250, 250, 0.4);
+    --clr-clear-700: rgba(250, 250, 250, 0.3);
+    --clr-clear-800: rgba(250, 250, 250, 0.2);
+    --clr-clear-900: rgba(250, 250, 250, 0.1);
+    --clr-clear-950: rgba(250, 250, 250, 0);
 
     color-scheme: light;
 }
@@ -65,12 +124,25 @@
     --clr-neutral-900: #f5f5f5;
     --clr-neutral-950: #fafafa;
 
+    /* transparent */
+    --clr-clear-50: rgba(10, 10, 10, 1);
+    --clr-clear-100: rgba(10, 10, 10, 0.9);
+    --clr-clear-200: rgba(10, 10, 10, 0.8);
+    --clr-clear-300: rgba(10, 10, 10, 0.7);
+    --clr-clear-400: rgba(10, 10, 10, 0.6);
+    --clr-clear-500: rgba(10, 10, 10, 0.5);
+    --clr-clear-600: rgba(10, 10, 10, 0.4);
+    --clr-clear-700: rgba(10, 10, 10, 0.3);
+    --clr-clear-800: rgba(10, 10, 10, 0.2);
+    --clr-clear-900: rgba(10, 10, 10, 0.1);
+    --clr-clear-950: rgba(10, 10, 10, 0);
+
     color-scheme: dark;
 }
 
 
 
-/* CSS Reset */
+/* RESET properties */
 * {
     padding: 0;
     margin: 0;
@@ -92,35 +164,35 @@ button {
 
 
 /*  */
-@media (min-width: 1401px) {
-    .maxContainer {
-        margin: auto;
-        max-width: 1400px;
-        transition: max-width 0.2s;
-    }
-    h1 {
-        font-size: 52px;
-    }
-    h2 {
-        font-size: 48px;
-    }
-    h3 {
-        font-size: 44px;
-    }
-    h4 {
-        font-size: 40px;
-    }
-    h5 {
-        font-size: 36px;
-    }
-    h6 {
-        font-size: 32px;
-    }
+
+.maxContainer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--xxl);
+    transition: max-width 0.1s;
+}
+h1 {
+    font-size: 52px;
+}
+h2 {
+    font-size: 48px;
+}
+h3 {
+    font-size: 44px;
+}
+h4 {
+    font-size: 40px;
+}
+h5 {
+    font-size: 36px;
+}
+h6 {
+    font-size: 32px;
 }
 
 @media (max-width: 1400px) {
     .maxContainer {
-        max-width: 1200px;
+        max-width: var(--xl);
     }
     h1 {
         font-size: 48px;
@@ -143,12 +215,12 @@ button {
 }
 @media (max-width: 1200px) {
     .maxContainer {
-        max-width: 992px;
+        max-width: var(--lg);
     }
 }
 @media (max-width: 992px) {
     .maxContainer {
-        max-width: 768px;
+        max-width: var(--md);
     }
     h1 {
         font-size: 40px;
@@ -171,7 +243,7 @@ button {
 }
 @media (max-width: 768px) {
     .maxContainer {
-        max-width: 576px;
+        max-width: var(--sm);
     }
 }
 @media (max-width: 576px) {
@@ -197,3 +269,8 @@ button {
         font-size: 16px;
     }
 }
+
+
+
+
+
