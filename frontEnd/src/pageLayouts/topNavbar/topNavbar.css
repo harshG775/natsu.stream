@@ -1,24 +1,44 @@
 .top-navbar {
+    background-color: var(--clr-neutral-50);
+    color: var(--clr-neutral-800);
+    box-shadow: 1px 3px 5px var(--clr-neutral-200);
+    position: sticky;
+    top: 0;
+    
+}
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .top-navbar {
+        background-color: var(--clr-clear-600);
+        -webkit-backdrop-filter: blur(0.2rem);
+        backdrop-filter: blur(0.2rem);
+    }
+}
+
+
+
+.top-navbar ul {
     display: flex;
     align-items: center;
     gap: 1rem;
     padding: 0.5rem 0.5rem;
-    background-color: var(--clr-neutral-100);
-    color: var(--clr-neutral-800);
+
+    max-width: var(--xxl);
+    margin: auto;
 }
-.top-navbar li:nth-child(2) {
+.top-navbar ul li:nth-child(2) {
     margin-left: auto;
 }
-.top-navbar li:nth-child(3) svg {
+.top-navbar ul li:nth-child(3) svg {
     font-size: 1.8rem;
     display: flex;
     cursor: pointer;
-    color: var(--clr-neutral-600);
+    color: var(--clr-neutral-800);
     border: 2px solid currentColor;
     border-radius: 1rem;
     transition: color 0.2s;
 }
-.top-navbar li:nth-child(3) svg:hover {
-    color: var(--clr-primary-400);
+.top-navbar ul li:nth-child(3) svg:hover {
+    color: var(--clr-primary-700);
 
 }
+

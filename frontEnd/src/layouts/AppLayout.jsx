@@ -27,7 +27,7 @@ export default function AppLayout() {
             <div className="page">
                 <TopNavbar/>
                 <Suspense fallback={<LoadingScreen />}>
-                    <Outlet />
+                    <main><Outlet /></main>
                 </Suspense>
                 <Footer/>
             </div>

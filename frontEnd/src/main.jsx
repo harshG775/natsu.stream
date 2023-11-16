@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import AppRoutes from "./AppRoutes.jsx";
 import "./styles/index.css";
+import "./styles/customClasses.css";
 
 import { enableCache } from '@iconify/react';
 enableCache('local');

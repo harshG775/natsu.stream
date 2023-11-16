@@ -3,8 +3,8 @@ import {Icon} from "@iconify/react"
 import SearchBar from "../../components/searchBar/SearchBar";
 export default function TopNavbar() {
     return (
-		<header>
-			<ul className="top-navbar">
+		<header className="top-navbar">
+			<ul>
 				<li>
 					<Logo/>
 				</li>
