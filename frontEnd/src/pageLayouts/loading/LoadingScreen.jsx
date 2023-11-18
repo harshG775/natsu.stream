@@ -1,6 +1,9 @@
-
+import "./loadingScreen.css"
 export default function LoadingScreen() {
     return (
-        <div>loading...</div>
+        <section className="sec-loading">
+            <div className="one">
+            </div>
+        </section>
     );
 }
