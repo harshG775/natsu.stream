@@ -1,17 +1,16 @@
 /* side-navbar */
 
 .side-navbar {
-    z-index: 10;
+    z-index: 101;
     position: fixed;
-    inset: 0 auto 0 0;
+    inset: 3.5rem auto 0 0;
     display: flex;
-    background: var(--clr-neutral-100);
-    color: var( --clr-neutral-900);
-    box-shadow: 0 0 2px 0 var( --clr-neutral-500);
-
+    background-color: var(--clr-neutral-50);
+    color: var(--clr-neutral-800);
     pointer-events: all;
     overflow: hidden;
 }
+
 
 .side-navbar .nav-links {
     display: flex;
@@ -30,7 +29,7 @@
     align-items: center;
     padding: 0.5rem 1rem;
     background-color: var(--clr-neutral-200);
-    color: var(--txt_clr4);
+    color: var(--clr-neutral-900);
     
     /* border-top: 1px solid var(--bg_clr5);
     border-bottom: 1px solid var(--bg_clr5); */

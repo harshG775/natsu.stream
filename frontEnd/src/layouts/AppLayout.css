@@ -1,7 +1,7 @@
+
 .page{
     overflow-y: scroll;
     height: 100vh;
-    padding-left: 4rem;
     background-color: var(--clr-neutral-50);
     color: var(--clr-neutral-950);
 
@@ -9,11 +9,14 @@
 }
 main {
     min-height: calc(100% - 2.875rem);
+    padding-left: 4rem;
 }
 
 @media (max-width: 576px) {
     .page{    
         height: calc(100vh - 4rem);
+    }
+    main {
         padding-left: 0rem;
     }
 }

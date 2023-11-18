@@ -2,10 +2,13 @@ import "./overview.css"
 import { useParams } from "react-router-dom";
 import {useQuery} from "@tanstack/react-query"
 import axios from "axios"
+import {Icon} from "@iconify/react"
 
 
 export default function Overview() {
     const {media_type,id} = useParams()
+
+
     const { isPending, error, data, /*isFetching*/ } = useQuery({
 		queryKey: ["overview"],
 		queryFn: () =>axios.get(`https://api.themoviedb.org/3/${media_type}/${id}?api_key=c04c4d588ea04e1542849e5b03feadc9`)
@@ -21,9 +24,9 @@ export default function Overview() {
                 <div className="backdrop-inner maxContainer">
                     <img className="poster" src={`https://image.tmdb.org/t/p/w780/${data?.poster_path}`} alt="" />
                     <div className="action-buttons">
-                        <span><i className="fa-solid fa-play" ></i> Watch</span>
-                        <span><i className="fa-solid fa-plus" ></i> Add</span>
-                        <span><i className="fa-solid fa-heart" ></i></span>
+                        <span><Icon icon="zondicons:play-outline"/> Watch</span>
+                        <span><Icon icon="material-symbols:add"/> Add</span>
+                        <span><Icon icon="mdi:heart-outline"/> </span>
                     </div>
                 </div>
             </div>

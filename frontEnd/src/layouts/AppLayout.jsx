@@ -1,13 +1,12 @@
 import "./AppLayout.css"
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect,lazy } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { lazy } from "react";
-import SideNavbar from "../components/sideNavbar/SideNavbar";
+import SideNavbar from "../pageLayouts/sideNavbar/SideNavbar";
 import TopNavbar from "../pageLayouts/topNavbar/TopNavbar";
 import Footer from "../pageLayouts/footer/Footer";
 import ThemeToggle from "../components/theme/ThemeToggle";
+import LoadingScreen from "../pageLayouts/loading/LoadingScreen";
 
-const LoadingScreen = lazy(() => import("../pageLayouts/loading/LoadingScreen"));
 
 export default function AppLayout() {
     const location = useLocation();
@@ -23,14 +22,14 @@ export default function AppLayout() {
     return (
         <>
             <SideNavbar/>
-            <ThemeToggle/>
-            <div className="page">
-                <TopNavbar/>
-                <Suspense fallback={<LoadingScreen />}>
-                    <main><Outlet /></main>
-                </Suspense>
-                <Footer/>
-            </div>
+            <Suspense fallback={<LoadingScreen />}>
+                <ThemeToggle/>
+                <div className="page">
+                    <TopNavbar/>
+                        <main><Outlet /></main>
+                    <Footer/>
+                </div>
+            </Suspense>
         </>
     );
 }
