@@ -1,0 +1,51 @@
+.user-profile-icon-container {
+    position: relative;
+    display: flex;
+}
+.user-profile-icon-container svg {
+    display: flex;
+    cursor: pointer;
+    background-color: var(--clr-secondary-700);
+    color: var(--clr-secondary-100);
+    border: 2px solid var(--clr-secondary-500);
+    border-radius: 1rem;
+    transition: color 0.2s;
+}
+
+.userIcon:focus svg {
+    background-color: var(--clr-secondary-800);
+}
+.userIcon:focus + ul {
+    visibility: visible;
+}
+
+.user-profile-icon-container li {
+    width: 100%;
+}
+.user-profile-icon-container  .links {
+    position: absolute;
+    top: 2.8rem;
+    right: 1rem;
+
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: var(--clr-neutral-100);
+    height: 4rem;
+    visibility: hidden;
+}
+.user-profile-icon-container .links li a {
+    white-space: nowrap;
+    font-weight: 600;
+    color: var(--clr-neutral-900);
+}
+.user-profile-icon-container .links li:nth-child(2) a {
+    font-weight: 400;
+}
+
+
+.user-profile-icon-container .links li a:hover {
+    color: var(--clr-secondary-600);
+}

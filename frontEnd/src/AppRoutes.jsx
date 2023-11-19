@@ -3,9 +3,10 @@ import AppLayout from './layouts/AppLayout';
 import { lazy } from 'react';
 
 import Home from "./pages/With_Link/Home/Home"
-import PageNotFound from './pages/Without_Link/PageNotFound';
+const PageNotFound = lazy(() => import("./pages/Without_Link/PageNotFound"));
 const Overview = lazy(() => import("./pages/Without_Link/overview/Overview"));
-
+import { Suspense } from 'react';
+import LoadingScreen from './pageLayouts/loading/LoadingScreen';
 export default function AppRoutes() {
 	const router = createBrowserRouter([
 		{
@@ -48,6 +49,8 @@ export default function AppRoutes() {
 		}
 	])
 	return (
-		<RouterProvider router={router} />
+		<Suspense fallback={<LoadingScreen/>}>
+			<RouterProvider router={router} />
+		</Suspense>
 	);
 }

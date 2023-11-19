@@ -1,22 +1,24 @@
 
-.page{
-    overflow-y: scroll;
-    height: 100vh;
+
+/* .page{
     background-color: var(--clr-neutral-50);
     color: var(--clr-neutral-950);
+    overflow-y: scroll;
+    position: fixed;
+    inset: 0 0 0 0;
+} */
 
-    min-height: 100vh;
+#main {
+    min-height: 100%;
+    padding-left: 3.5rem;
 }
-main {
-    min-height: calc(100% - 2.875rem);
-    padding-left: 4rem;
-}
-
 @media (max-width: 576px) {
-    .page{    
-        height: calc(100vh - 4rem);
-    }
-    main {
+    /* .page{
+        inset: 0 0 3rem 0;
+    } */
+    #main {
         padding-left: 0rem;
+        padding-bottom: 3rem;
     }
 }
+

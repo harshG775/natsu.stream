@@ -9,15 +9,14 @@
 }
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .top-navbar {
-        background-color: var(--clr-clear-200);
-        -webkit-backdrop-filter: blur(0.2rem);
-        backdrop-filter: blur(0.2rem);
+        background-color: var(--clr-clear-100);
+        -webkit-backdrop-filter: blur(2rem);
+        backdrop-filter: blur(2rem);
     }
 }
 
 
-
-.top-navbar ul {
+.top-navbar > ul {
     height: 100%;
     display: flex;
     align-items: center;
@@ -28,19 +27,19 @@
     margin: auto;
 }
 .top-navbar ul li:nth-child(2) {
-    margin-left: auto;
+    margin-right: auto;
 }
-.top-navbar ul li:nth-child(3) svg {
+
+.top-navbar svg{
     font-size: 1.8rem;
-    display: flex;
-    cursor: pointer;
-    color: var(--clr-neutral-800);
-    border: 2px solid currentColor;
-    border-radius: 1rem;
-    transition: color 0.2s;
-}
-.top-navbar ul li:nth-child(3) svg:hover {
-    color: var(--clr-primary-700);
-
 }
 
+
+@media (max-width: 576px) {
+    .top-navbar {
+        position: relative;
+    }
+    .top-navbar > ul > li:nth-child(1) {
+        display: none;
+    }
+}

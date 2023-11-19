@@ -1,0 +1,8 @@
+.main-logo {
+    all: unset;
+    display: block;
+    cursor: pointer;
+}
+.main-logo:hover {
+    background-color: var(--clr-neutral-700);
+}

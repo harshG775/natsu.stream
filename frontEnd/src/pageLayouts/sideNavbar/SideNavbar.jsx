@@ -1,8 +1,7 @@
 import "./sideNavbar.css"
 import { Link } from "react-router-dom";
-// import { useState } from "react";
 import {Icon} from "@iconify/react"
-
+import { useState } from "react";
 const sideNavbarLinks=[
     {
         labelIcon:"clarity:home-line",
@@ -10,57 +9,46 @@ const sideNavbarLinks=[
         linkTo:"/",
     },
     {
-        labelIcon:"clarity:home-line",
+        labelIcon:"iconamoon:discover-bold",
         label:"Discover",
         linkTo:"/discover",
     },
     {
-        labelIcon:"clarity:home-line",
+        labelIcon:"ri:movie-line",
         label:"Movie",
         linkTo:"/movies",
     },
     {
-        labelIcon:"clarity:home-line",
+        labelIcon:"lucide:tv",
         label:"Tv Show",
         linkTo:"/tv-shows",
     },
     {
-        labelIcon:"clarity:home-line",
+        labelIcon:"mingcute:settings-6-fill",
         label:"Settings",
         linkTo:"/settings",
     },
 ]
 
 export default function SideNavbar() {
-    // const [isActivePageLink,setIsActivePageLink] =useState(0)
-    // const isActiveH=()=>{
-    //     return ("active")
-    // }
+    const [isActivePageLink,setIsActivePageLink] =useState(0)
+    const handleIsActive=(e)=>{
+        setIsActivePageLink(e)
+    }
     return (
         <nav className='side-navbar'>
-            <ul className="nav-links">
-                <li className="nav-logo">
-                    <a>
-                        <span><i className="fa-solid fa-dragon"></i></span>
-                        <span>Dragneel</span>
-                    </a>
-                </li>
-                {sideNavbarLinks.map((el,i)=>(
-                    <li key={i} >
-                        <SideNavbarLink {...el} />
-                    </li>
-
-                ))}
-            </ul>
+            {sideNavbarLinks.map((el,i)=>(
+                <SideNavbarLink key={i} {...el} handleIsActive={handleIsActive} isActivePageLink={isActivePageLink} id={i} />
+            ))}
         </nav>
     );
 }
 
 
 function SideNavbarLink(prop) {
-    const {label,labelIcon,linkTo} = prop
+    const {label,labelIcon,linkTo,handleIsActive,id,isActivePageLink} = prop
     return (
-        <Link to={linkTo}>
+        <Link {...prop} to={linkTo} id={isActivePageLink===id?"active":""} onClick={()=>handleIsActive(id)}>
             <span>
                 <Icon style={{height:"1.8rem",width:"2rem"}} icon={labelIcon} />
             </span>
@@ -68,3 +56,4 @@ function SideNavbarLink(prop) {
         </Link>
 	);
 }
+

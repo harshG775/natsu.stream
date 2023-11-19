@@ -1,0 +1,16 @@
+.BTN {
+    background-color: var(--clr-secondary-800);
+    color: var(--clr-secondary-50);
+    margin: 0.25rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 0.3rem;
+    transition: background-color 0.05s;
+    font-weight: 600;
+    
+}
+.BTN:hover{
+    background-color: var(--clr-secondary-700);
+}
+.BTN:active{
+    background-color: var(--clr-secondary-900);
+}

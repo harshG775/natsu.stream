@@ -1,99 +1,79 @@
-/* side-navbar */
-
 .side-navbar {
-    z-index: 101;
+    z-index: 100;
     position: fixed;
     inset: 3.5rem auto 0 0;
+
     display: flex;
-    background-color: var(--clr-neutral-50);
+    gap: 0.25rem;
+    flex-direction: column;
+    padding: 0.5rem 0.3rem 1rem;
+
+
+    border-radius: 0 0.8rem 0.8rem 0 ;
+    box-shadow: 1px 0px 0px var(--clr-neutral-400);
+
+    display: flex;
+    background-color: var(--clr-neutral-200);
     color: var(--clr-neutral-800);
     pointer-events: all;
-    overflow: hidden;
+    overflow-x: hidden;
 }
-
-
-.side-navbar .nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    font-size: 1.3rem;
-    height: 100%;
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .side-navbar {
+        background-color: var(--clr-clear-500);
+        -webkit-backdrop-filter: blur(1rem);
+        backdrop-filter: blur(1rem);
+    }
 }
+.side-navbar a {
+    overflow-x: hidden;
+    min-height: 3rem;
+    padding: 0.5rem;
 
-.side-navbar .nav-links li {
-    padding: 0.2rem 0.6rem;
-}
-.side-navbar .nav-links a {
+    border-radius: 0.5rem;
+
     white-space: nowrap;
     display: flex;
     align-items: center;
-    padding: 0.5rem 1rem;
-    background-color: var(--clr-neutral-200);
+    background-color: var(--clr-neutral-50);
     color: var(--clr-neutral-900);
-    
-    /* border-top: 1px solid var(--bg_clr5);
-    border-bottom: 1px solid var(--bg_clr5); */
-    border-radius: 20px 20px 10px 10px;
-
     transition: background-color 0.2s;
 }
-.side-navbar .nav-links a:hover {
+.side-navbar a:hover {
     background-color: var( --clr-primary-700);
     color: var(--clr-primary-50);
 }
-#active {
+.side-navbar #active {
     background-color: var( --clr-primary-700);
     color: var(--clr-primary-50);
 }
 
-.side-navbar .nav-links a i {
+.side-navbar a span {
+    display: flex;
+    align-items: center;
+}
+.side-navbar a span svg {
     display: inline-block;
-    width: 3rem;
+    margin-right: 1rem;
 }
-
-/*  */
+/* min */
 @media (min-width: 577px) {
-    .side-navbar {
-        width: 4rem;
-        /* padding-top: 3rem; */
-        transition: width 0.2s;
+    .side-navbar a {
+        transition: width 0.3s;
+        width: 3rem;
     }
-    .side-navbar:hover {
-        width: 11.25rem;
+    .side-navbar:hover a{
+        width: 11rem;
     }
 
-    
-    
-    .side-navbar .nav-links .nav-logo a {
-        all: unset;
-        display: block;
-        padding: 1rem 0;
-    }
-    .side-navbar .nav-links .nav-logo a:hover {
-        background-color: var(--bg_clr2);
-    }
-    .nav-logo {
-        all: unset;
-        background-color: var(--bg_clr2);
-        box-shadow: 0 0 5px 0 var(--bg_clr5);
-    }
-    .nav-logo span:nth-child(1){
-        color: var( --clr-primary-700);
-        background-color: var(--bg_clr2);
-        position:absolute;
-        top: 0;
-        right: -1rem;
-        font-size: 1.5rem;
-        padding: 0.8rem 1rem;
-    }
-    .side-navbar .nav-links li:nth-last-child(1) {
+
+    .side-navbar a:nth-last-child(1) {
         margin-top: auto;
-        margin-bottom: 1rem;
     }
+
 }
 
-/*  */
-
+/* max */
 @media (max-width: 576px) {
 
     .side-navbar {
@@ -103,23 +83,23 @@
 
         position: fixed;
         inset: auto 0 0 0;
-    }
 
-    .side-navbar .nav-links {
-        width: 100%;
+        border-radius: 0.6rem 0.6rem 0  0;
+        border-top: 1px solid var(--clr-primary-900);
+        border-right: 1px solid var(--clr-clear-900);
+        border-left: 1px solid var(--clr-clear-900);
+
         display: flex;
         flex-direction: row;
+        padding: 0.25rem 10vw 0.25rem;
         justify-content: space-around;
-        padding: 0.3rem 10vw 0.3rem;
-        align-items: center;
+
     }
-    .side-navbar .nav-links a span:nth-child(2) {
+
+    .side-navbar a span:nth-child(2) {
         display: none;
     }
-    .side-navbar .nav-links a i {
-        width: unset;
-    }
-    .nav-logo {
-        display: none;
+    .side-navbar a span svg {
+        margin-right: 0rem;
     }
 }
