@@ -1,8 +1,8 @@
-import { MAL } from "@/utils/MAL";
+// import { query } from "@/utils/MAL";
 
 export default async function Home() {
-    const { data } = await MAL();
-    console.log(data);
+    // const { data } = await query("fairy tail");
+    // console.log(data.data);
     return (
         <main>
             <h1>Welcome</h1>
